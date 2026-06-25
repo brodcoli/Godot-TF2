@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" format=3 uid="uid://cd3x22oql6hjj"]
+
+[ext_resource type="FontFile" uid="uid://ppry58mqs8uy" path="res://assets/fonts/PICO-8 mono.ttf" id="1_hihuq"]
+
+[resource]
+base_font = ExtResource("1_hihuq")

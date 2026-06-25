@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://bkl3kfl280lyd"]
+
+[ext_resource type="Script" uid="uid://byffdkp5rgxbl" path="res://scripts/vehicles/vehicle.gd" id="1_tgwcm"]
+[ext_resource type="Script" uid="uid://chpp0gb06mjbj" path="res://scripts/vehicles/motorcycle/motorcycle_sfx.gd" id="2_6og7e"]
+[ext_resource type="Script" uid="uid://dfywprwwebcmm" path="res://scripts/vehicles/motorcycle/motorcycle_music_player.gd" id="3_e72a2"]
+[ext_resource type="AudioStream" uid="uid://boe8x5nj2vxht" path="res://assets/audio/button_press.mp3" id="4_4c1y3"]
+[ext_resource type="PackedScene" uid="uid://dxos7blk4yoay" path="res://scenes/vehicles/motorcycle/music_player_screen.tscn" id="5_6og7e"]
+[ext_resource type="Script" uid="uid://c36joxc7emdrc" path="res://scripts/interactable.gd" id="10_vcn8k"]
+[ext_resource type="PackedScene" uid="uid://bdcxrbtnuium3" path="res://assets/models/vehicles/motorcycle.blend" id="11_mm730"]
+[ext_resource type="AudioStream" uid="uid://cjjlbkovk6owg" path="res://assets/audio/ambience/engine_hum/1.mp3" id="12_pq788"]
+[ext_resource type="AudioStream" uid="uid://dc52phxhe8vw7" path="res://assets/audio/vehicle/engine_revving_loop.mp3" id="13_gd5j7"]
+[ext_resource type="AudioStream" uid="uid://bb7d04eytcpl5" path="res://assets/audio/vehicle/motorcycle_thud.mp3" id="14_yuyao"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7mi6h"]
+points = PackedVector3Array(0.39178634, 0.6954125, 0.2967415, 0.39178634, 0.14519528, 0.2967415, 0.24429119, 0.65137064, -1.0260342, -0.39178634, 0.6954125, 0.2967415, 0.24574852, 0, 0.2967415, 0.24429119, 0.14519528, -1.0260342, 0.19658345, 0.58438885, -1.3516455, -0.24436791, 0.65137064, -1.0260342, -0.39178634, 0.14519528, 0.2967415, -0.24582522, 0, 0.2967415, 0.09825337, 0, -1.0260342, 0.19658345, 0.14519528, -1.3516455, -0.19666018, 0.58438885, -1.3516455, -0.24436791, 0.14519528, -1.0260342, -0.09833011, 0, -1.0260342, -0.19666018, 0.14519528, -1.3516455)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_01252"]
+points = PackedVector3Array(-0.24582522, 0, 0.29674134, -0.39178634, 0.1451552, 0.29674134, 0.24574852, 0, 0.29674134, -0.24590193, 0, 1.3163811, -0.39178634, 0.69539255, 0.29674134, -0.39178634, 0.1451552, 1.3163811, 0.39178634, 0.1451552, 0.29674134, 0.24582517, 0, 1.3163811, 0.39178634, 0.69539255, 0.29674134, -0.39178634, 0.9462415, 0.37050676, -0.39178634, 0.8529605, 1.3163811, 0.39178634, 0.1451552, 1.3163811, 0.39178634, 0.9462415, 0.37050676, 0.39178634, 0.8529605, 1.3163811)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6lkvk"]
+radius = 0.025
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4c1y3"]
+radius = 0.029775005
+
+[node name="Motorcycle" type="CharacterBody3D" unique_id=1279205536 node_paths=PackedStringArray("seat_marker", "exit_points")]
+script = ExtResource("1_tgwcm")
+seat_marker = NodePath("SeatMarker")
+exit_points = [NodePath("ExitPoints/ExitRight"), NodePath("ExitPoints/ExitLeft")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1438369166]
+shape = SubResource("ConvexPolygonShape3D_7mi6h")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1617185724]
+shape = SubResource("ConvexPolygonShape3D_01252")
+
+[node name="MotorcycleSFX" type="Node" parent="." unique_id=48016795]
+script = ExtResource("2_6og7e")
+
+[node name="MusicPlayer" type="Node3D" parent="." unique_id=1927142210]
+script = ExtResource("3_e72a2")
+
+[node name="BtnPressSFX" type="AudioStreamPlayer3D" parent="MusicPlayer" unique_id=860660886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82674176, 0.23345485)
+stream = ExtResource("4_4c1y3")
+max_db = 6.0
+
+[node name="MusicPlayerScreen" type="SubViewport" parent="MusicPlayer" unique_id=1141647840]
+size = Vector2i(86, 29)
+
+[node name="MusicPlayerScreen" parent="MusicPlayer/MusicPlayerScreen" unique_id=172280110 instance=ExtResource("5_6og7e")]
+unique_name_in_owner = true
+
+[node name="Tracks" type="Node3D" parent="MusicPlayer" unique_id=993151148]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.77664435, 0.28976974)
+
+[node name="LonePeakMusic - Building Bridges" type="AudioStreamPlayer3D" parent="MusicPlayer/Tracks" unique_id=1538346051]
+attenuation_model = 2
+volume_db = 30.0
+unit_size = 2.0
+max_db = 1.0
+bus = &"Music"
+metadata/url_link = "https://lonepeakmusic.bandcamp.com/track/building-bridges"
+
+[node name="Stevia Sphere - Apartments" type="AudioStreamPlayer3D" parent="MusicPlayer/Tracks" unique_id=300789427]
+attenuation_model = 2
+volume_db = 30.0
+unit_size = 2.0
+max_db = 1.0
+bus = &"Music"
+metadata/url_link = "https://steviasphere.bandcamp.com/track/apartments"
+
+[node name="Stevia Sphere - Packing your things" type="AudioStreamPlayer3D" parent="MusicPlayer/Tracks" unique_id=1970891570]
+attenuation_model = 2
+volume_db = 30.0
+unit_size = 2.0
+max_db = 2.0
+bus = &"Music"
+metadata/url_link = "https://steviasphere.bandcamp.com/track/packing-your-things"
+
+[node name="HOME - 2" type="AudioStreamPlayer3D" parent="MusicPlayer/Tracks" unique_id=978155752]
+attenuation_model = 2
+volume_db = 30.0
+unit_size = 2.0
+max_db = 2.0
+bus = &"Music"
+metadata/url_link = "https://home96.bandcamp.com/track/2"
+
+[node name="HOME - 5" type="AudioStreamPlayer3D" parent="MusicPlayer/Tracks" unique_id=132028159]
+attenuation_model = 2
+volume_db = 30.0
+unit_size = 2.0
+max_db = 1.0
+bus = &"Music"
+metadata/url_link = "https://home96.bandcamp.com/track/5"
+
+[node name="HOME - 22" type="AudioStreamPlayer3D" parent="MusicPlayer/Tracks" unique_id=1252953657]
+attenuation_model = 2
+volume_db = 30.0
+unit_size = 2.0
+max_db = 0.0
+bus = &"Music"
+metadata/url_link = "https://home96.bandcamp.com/track/22"
+
+[node name="C418 - Kitten" type="AudioStreamPlayer3D" parent="MusicPlayer/Tracks" unique_id=1617397812]
+attenuation_model = 2
+volume_db = 30.0
+unit_size = 2.0
+max_db = 0.0
+bus = &"Music"
+metadata/url_link = "https://c418.bandcamp.com/track/kitten"
+
+[node name="PlayBtnArea" type="Area3D" parent="MusicPlayer" unique_id=1893658796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.031716287, 0.7639496, 0.24391368)
+script = ExtResource("10_vcn8k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicPlayer/PlayBtnArea" unique_id=515164425]
+shape = SubResource("SphereShape3D_6lkvk")
+
+[node name="PauseBtnArea" type="Area3D" parent="MusicPlayer" unique_id=956805993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02038908, 0.7639496, 0.24391368)
+script = ExtResource("10_vcn8k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicPlayer/PauseBtnArea" unique_id=737621074]
+shape = SubResource("SphereShape3D_6lkvk")
+
+[node name="LinkBtnArea" type="Area3D" parent="MusicPlayer" unique_id=1177918813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05747859, 0.82023835, 0.29060286)
+script = ExtResource("10_vcn8k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicPlayer/LinkBtnArea" unique_id=714753629]
+shape = SubResource("SphereShape3D_4c1y3")
+
+[node name="motorcycle" parent="." unique_id=149760173 instance=ExtResource("11_mm730")]
+
+[node name="maincol" parent="motorcycle" index="1" unique_id=1781635778]
+visible = false
+
+[node name="maincol2" parent="motorcycle" index="2" unique_id=1211962822]
+visible = false
+
+[node name="SeatMarker" type="Marker3D" parent="." unique_id=2018245285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12062222, -0.24037778)
+
+[node name="EngineHumSFX" type="AudioStreamPlayer3D" parent="." unique_id=1444348872]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40786034, 0)
+stream = ExtResource("12_pq788")
+volume_db = -28.0
+bus = &"SFX"
+
+[node name="EngineRevSFX" type="AudioStreamPlayer3D" parent="." unique_id=1923592645]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39852262, 0)
+stream = ExtResource("13_gd5j7")
+max_db = -1.0
+bus = &"SFX"
+
+[node name="MotorcycleThudSFX" type="AudioStreamPlayer3D" parent="." unique_id=1633583029]
+unique_name_in_owner = true
+stream = ExtResource("14_yuyao")
+bus = &"SFX"
+
+[node name="ExitPoints" type="Node3D" parent="." unique_id=497525079]
+
+[node name="ExitRight" type="Marker3D" parent="ExitPoints" unique_id=1236596207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.100394964, 0)
+
+[node name="ExitLeft" type="Marker3D" parent="ExitPoints" unique_id=1263728100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.100394964, 0)
+
+[editable path="motorcycle"]

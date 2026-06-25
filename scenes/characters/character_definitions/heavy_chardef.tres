@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="CharacterDefinition" format=3 uid="uid://nw1jjrgoucua"]
+
+[ext_resource type="PackedScene" uid="uid://b10wa35krqnyj" path="res://assets/models/characters/heavy_dead_head.blend" id="1_am43n"]
+[ext_resource type="Script" uid="uid://ih268gcxtvuf" path="res://scripts/characters/character_definition.gd" id="2_o4qdn"]
+[ext_resource type="PackedScene" uid="uid://dycw1smscmb5i" path="res://scenes/items/launcher.tscn" id="3_owew0"]
+[ext_resource type="PackedScene" uid="uid://bkvw8p7caos72" path="res://scenes/items/shotgun.tscn" id="4_2aebc"]
+[ext_resource type="PackedScene" uid="uid://dqlhm0gv0g5us" path="res://scenes/items/shovel.tscn" id="5_4ixpn"]
+[ext_resource type="Script" uid="uid://duvmdvxub0oxn" path="res://scripts/characters/character_team_visual_override.gd" id="6_6vbi0"]
+[ext_resource type="Script" uid="uid://cthha41boxy0k" path="res://scripts/characters/character_material_override.gd" id="7_y5pdk"]
+[ext_resource type="Material" uid="uid://bc38k4t1y0x3u" path="res://materials/characters/heavy_blu.tres" id="8_312cd"]
+[ext_resource type="PackedScene" uid="uid://dkj3psqes1hsj" path="res://scenes/characters/model_scenes/heavy_world_model.tscn" id="9_fbk64"]
+[ext_resource type="PackedScene" uid="uid://dmwufmix2c0c7" path="res://scenes/characters/model_scenes/heavy_view_model.tscn" id="9_o4qdn"]
+
+[sub_resource type="Resource" id="Resource_blu_world_material"]
+script = ExtResource("7_y5pdk")
+material = ExtResource("8_312cd")
+
+[sub_resource type="Resource" id="Resource_blu_team_visual"]
+script = ExtResource("6_6vbi0")
+team_id = 2
+world_model_materials = Array[ExtResource("7_y5pdk")]([SubResource("Resource_blu_world_material")])
+
+[resource]
+script = ExtResource("2_o4qdn")
+display_name = "Heavy"
+world_model_scene = ExtResource("9_fbk64")
+world_model_rotation_offset_degrees = Vector3(0, 180, 0)
+dead_head_model_scene = ExtResource("1_am43n")
+view_model_scene = ExtResource("9_o4qdn")
+view_model_position_offset = Vector3(0, -1.8, 0)
+view_model_rotation_offset_degrees = Vector3(0, 180, 0)
+team_visual_overrides = [SubResource("Resource_blu_team_visual")]
+starting_inventory = Array[PackedScene]([ExtResource("3_owew0"), ExtResource("4_2aebc"), ExtResource("5_4ixpn")])
+max_health = 200
+footstep_material_set = "materials/grass"

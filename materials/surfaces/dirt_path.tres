@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c4rb13ranasuk"]
+
+[ext_resource type="Shader" uid="uid://dx1m181cnmt7b" path="res://materials/surfaces/standard_alpha_scissor.gdshader" id="1_f4542"]
+[ext_resource type="Texture2D" uid="uid://co5de17hudbvb" path="res://assets/textures/materials/Ground103/Ground103_1K-JPG_Color_path.png" id="2_jb46p"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_f4542")
+shader_parameter/albedo = ExtResource("2_jb46p")
+shader_parameter/alpha_scissor = 0.90000001341108
+shader_parameter/normal_stength = 0.0

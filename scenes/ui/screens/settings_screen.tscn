@@ -1,0 +1,675 @@
+[gd_scene format=3 uid="uid://cf6w23jwi7t7m"]
+
+[ext_resource type="Script" uid="uid://dyq10u7pjlfw6" path="res://scripts/ui/screens/settings_screen.gd" id="1_iyqbd"]
+[ext_resource type="Theme" uid="uid://d0f6ppcpwg8xh" path="res://themes/main_theme.tres" id="1_ko6dn"]
+[ext_resource type="StyleBox" uid="uid://c1t50qkhfnc34" path="res://themes/option_btn_normal2.tres" id="3_84e4x"]
+[ext_resource type="StyleBox" uid="uid://d3we4id1ggchh" path="res://themes/option_btn_hover2.tres" id="4_2cakt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ko6dn"]
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_iyqbd"]
+font_size = 8
+font_color = Color(1, 1, 1, 0.7921569)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jbor4"]
+font_size = 15
+
+[sub_resource type="Gradient" id="Gradient_iyqbd"]
+offsets = PackedFloat32Array(0, 0.050691243, 0.84792626, 0.9447005)
+colors = PackedColorArray(0.75, 0, 0.21249998, 0, 0.75, 0, 0.21249998, 0.4627451, 0.7490196, 0, 0.21176471, 0.4627451, 1, 0, 0.2833333, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jbor4"]
+gradient = SubResource("Gradient_iyqbd")
+width = 65
+
+[node name="SettingsScreen" type="Control" unique_id=1169349898]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iyqbd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=638066134]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.48235294)
+
+[node name="MainMargin" type="MarginContainer" parent="." unique_id=363625529]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ko6dn")
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 100
+
+[node name="Panel" type="Panel" parent="MainMargin" unique_id=616068386]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMargin/Panel" unique_id=694675698]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ko6dn")
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMargin/Panel/MarginContainer" unique_id=2016771668]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+theme_override_constants/separation = 8
+
+[node name="TitleMarginContainer" type="MarginContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer" unique_id=2105259240]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="Header" type="VBoxContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TitleMarginContainer" unique_id=730654477]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+theme_override_constants/separation = 2
+
+[node name="Header" type="HBoxContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TitleMarginContainer/Header" unique_id=775907538]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+alignment = 1
+
+[node name="Title" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TitleMarginContainer/Header/Header" unique_id=773796675]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "Settings"
+label_settings = SubResource("LabelSettings_ko6dn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TitleMarginContainer/Header" unique_id=705998792]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+alignment = 1
+
+[node name="FPSMonitorLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TitleMarginContainer/Header/HBoxContainer" unique_id=1742686540]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "FPS: N/A"
+label_settings = SubResource("LabelSettings_iyqbd")
+
+[node name="TabContainer" type="TabContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer" unique_id=429412102]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_ko6dn")
+tab_alignment = 1
+current_tab = 0
+
+[node name="Graphics" type="ScrollContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer" unique_id=1936249718]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+metadata/_tab_index = 0
+
+[node name="CenterContainer" type="MarginContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics" unique_id=1933408803]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_ko6dn")
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 35
+
+[node name="Separator" type="VBoxContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer" unique_id=764302326]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_ko6dn")
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="CenterContainer4" type="CenterContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator" unique_id=1854221392]
+layout_mode = 2
+
+[node name="PerformanceToggle" type="CheckButton" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer4" unique_id=2085369560]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_84e4x")
+theme_override_styles/hover = ExtResource("4_2cakt")
+text = "Power Save Mode? "
+
+[node name="CenterContainer3" type="CenterContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator" unique_id=67530434]
+layout_mode = 2
+
+[node name="GridContainer3" type="GridContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer3" unique_id=2128056507]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="UIScaleLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer3/GridContainer3" unique_id=1006658098]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "UI Size"
+
+[node name="UIScale" type="OptionButton" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer3/GridContainer3" unique_id=1806864870]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ko6dn")
+selected = 2
+item_count = 5
+popup/item_0/text = "Tiny"
+popup/item_0/id = 0
+popup/item_1/text = "Small"
+popup/item_1/id = 1
+popup/item_2/text = "Normal"
+popup/item_2/id = 2
+popup/item_3/text = "Large"
+popup/item_3/id = 3
+popup/item_4/text = "Huge"
+popup/item_4/id = 4
+
+[node name="CenterContainer2" type="CenterContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator" unique_id=378660897]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2" unique_id=1274430486]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="ResolutionLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2/GridContainer" unique_id=1604525054]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "Pixelation"
+
+[node name="Resolution" type="OptionButton" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2/GridContainer" unique_id=966473614]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+selected = 2
+item_count = 5
+popup/item_0/text = "None"
+popup/item_0/id = 0
+popup/item_1/text = "Low"
+popup/item_1/id = 1
+popup/item_2/text = "Medium"
+popup/item_2/id = 2
+popup/item_3/text = "High"
+popup/item_3/id = 3
+popup/item_4/text = "Extreme"
+popup/item_4/id = 4
+
+[node name="WindowModeLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2/GridContainer" unique_id=1769903542]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "Window Mode"
+
+[node name="WindowMode" type="OptionButton" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2/GridContainer" unique_id=14503367]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+selected = 0
+item_count = 2
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Fullscreen"
+popup/item_1/id = 1
+
+[node name="WindowResolutionLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2/GridContainer" unique_id=1627583805]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "Window Resolution"
+
+[node name="WindowResolution" type="OptionButton" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2/GridContainer" unique_id=285947295]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+selected = 2
+item_count = 4
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+popup/item_3/text = "1024x576"
+popup/item_3/id = 3
+
+[node name="LimitFPSLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2/GridContainer" unique_id=879581592]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "Limit FPS"
+
+[node name="LimitFPS" type="OptionButton" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2/GridContainer" unique_id=2049494698]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+selected = 0
+item_count = 5
+popup/item_0/text = "No Limit"
+popup/item_0/id = 0
+popup/item_1/text = "60fps"
+popup/item_1/id = 1
+popup/item_2/text = "45fps"
+popup/item_2/id = 2
+popup/item_3/text = "30fps"
+popup/item_3/id = 3
+popup/item_4/text = "24fps"
+popup/item_4/id = 4
+
+[node name="VSyncLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2/GridContainer" unique_id=199793167]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "VSync"
+
+[node name="VSync" type="OptionButton" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2/GridContainer" unique_id=910783990]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+selected = 0
+item_count = 2
+popup/item_0/text = "On"
+popup/item_0/id = 0
+popup/item_1/text = "Off"
+popup/item_1/id = 1
+
+[node name="FOVLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2/GridContainer" unique_id=338175049]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "FOV"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2/GridContainer" unique_id=233955004]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+
+[node name="FOV" type="HSlider" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2/GridContainer/HBoxContainer" unique_id=163913127]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_vertical = 4
+min_value = 60.0
+max_value = 130.0
+step = 5.0
+value = 70.0
+tick_count = 7
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="FOVLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2/GridContainer/HBoxContainer" unique_id=1901412438]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "70"
+horizontal_alignment = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator" unique_id=1014027103]
+layout_mode = 2
+
+[node name="GridContainer2" type="GridContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer" unique_id=354815831]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="PaintFilterLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer/GridContainer2" unique_id=1247972759]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "Paint Screen Filter"
+
+[node name="PaintFilter" type="OptionButton" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer/GridContainer2" unique_id=1470456193]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ko6dn")
+selected = 0
+item_count = 2
+popup/item_0/text = "Enabled"
+popup/item_0/id = 0
+popup/item_1/text = "Disabled"
+popup/item_1/id = 1
+
+[node name="PaintResLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer/GridContainer2" unique_id=250412333]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "Paint Resolution"
+
+[node name="PaintRes" type="OptionButton" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer/GridContainer2" unique_id=570760074]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ko6dn")
+selected = 1
+item_count = 2
+popup/item_0/text = "Low (2k)"
+popup/item_0/id = 0
+popup/item_1/text = "High (4k)"
+popup/item_1/id = 1
+
+[node name="SSAOLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer/GridContainer2" unique_id=74714273]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "Ambient Occlusion"
+
+[node name="SSAO" type="OptionButton" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer/GridContainer2" unique_id=833126979]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ko6dn")
+selected = 0
+item_count = 2
+popup/item_0/text = "On"
+popup/item_0/id = 0
+popup/item_1/text = "Off"
+popup/item_1/id = 1
+
+[node name="ShadowResLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer/GridContainer2" unique_id=825981420]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "Shadow Resolution"
+
+[node name="ShadowRes" type="OptionButton" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer/GridContainer2" unique_id=1383176175]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ko6dn")
+selected = 1
+item_count = 3
+popup/item_0/text = "Low (1k)"
+popup/item_0/id = 0
+popup/item_1/text = "Medium (2k)"
+popup/item_1/id = 1
+popup/item_2/text = "High (4k)"
+popup/item_2/id = 2
+
+[node name="SurfaceScatterLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer/GridContainer2" unique_id=776785609]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "Surface Scatter Decor"
+label_settings = SubResource("LabelSettings_jbor4")
+
+[node name="SurfaceScatter" type="OptionButton" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer/GridContainer2" unique_id=922905151]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_ko6dn")
+selected = 0
+item_count = 2
+popup/item_0/text = "Enabled"
+popup/item_0/id = 0
+popup/item_1/text = "Disabled"
+popup/item_1/id = 1
+
+[node name="Audio" type="ScrollContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer" unique_id=605843998]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+metadata/_tab_index = 1
+
+[node name="CenterContainer" type="MarginContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Audio" unique_id=1994187366]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_ko6dn")
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 35
+
+[node name="GridContainer" type="GridContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/CenterContainer" unique_id=455081133]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_ko6dn")
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="MasterVolLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/CenterContainer/GridContainer" unique_id=1972450952]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "Master"
+
+[node name="MasterVol" type="HSlider" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/CenterContainer/GridContainer" unique_id=1831211896]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+step = 2.0
+value = 80.0
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="MasterVolLabel2" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/CenterContainer/GridContainer" unique_id=472765829]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "80%"
+
+[node name="MusicVolLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/CenterContainer/GridContainer" unique_id=1709327682]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "Music"
+
+[node name="MusicVol" type="HSlider" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/CenterContainer/GridContainer" unique_id=1972085275]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+step = 2.0
+value = 80.0
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="MusicVolLabel2" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/CenterContainer/GridContainer" unique_id=551937338]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "80%"
+
+[node name="SFXVolLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/CenterContainer/GridContainer" unique_id=2128406616]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "SFX"
+
+[node name="SFXVol" type="HSlider" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/CenterContainer/GridContainer" unique_id=440513300]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+step = 2.0
+value = 80.0
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="SFXVolLabel2" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/CenterContainer/GridContainer" unique_id=1743468302]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "80%"
+
+[node name="WindVolLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/CenterContainer/GridContainer" unique_id=-1100116275]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "Wind"
+
+[node name="WindVol" type="HSlider" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/CenterContainer/GridContainer" unique_id=1948571023]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+step = 2.0
+value = 80.0
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="WindVolLabel2" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/CenterContainer/GridContainer" unique_id=-1356496284]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "80%"
+
+[node name="Controls" type="ScrollContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer" unique_id=409934290]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+metadata/_tab_index = 2
+
+[node name="CenterContainer" type="MarginContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Controls" unique_id=1875952587]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_ko6dn")
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 35
+
+[node name="Separator" type="VBoxContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Controls/CenterContainer" unique_id=840112663]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_ko6dn")
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Controls/CenterContainer/Separator" unique_id=986642064]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Controls/CenterContainer/Separator/CenterContainer2" unique_id=1061243146]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="SensLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Controls/CenterContainer/Separator/CenterContainer2/GridContainer" unique_id=1801334141]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "Look Sensitivity"
+
+[node name="Sens" type="HSlider" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Controls/CenterContainer/Separator/CenterContainer2/GridContainer" unique_id=1319205855]
+z_index = 1
+clip_contents = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+min_value = 2.0
+max_value = 150.0
+step = 2.0
+value = 50.0
+tick_count = 9
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="TextureRect" type="TextureRect" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Controls/CenterContainer/Separator/CenterContainer2/GridContainer/Sens" unique_id=443795426]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.66700006
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -13.400009
+offset_top = 4.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset_ratio = Vector2(1, 0)
+texture = SubResource("GradientTexture1D_jbor4")
+
+[node name="SensLabel2" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Controls/CenterContainer/Separator/CenterContainer2/GridContainer" unique_id=807247601]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "50"
+
+[node name="CenterContainer" type="CenterContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Controls/CenterContainer/Separator" unique_id=205829676]
+layout_mode = 2
+
+[node name="GridContainer2" type="GridContainer" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Controls/CenterContainer/Separator/CenterContainer" unique_id=888856982]
+layout_mode = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="ForceTouchControlsLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Controls/CenterContainer/Separator/CenterContainer/GridContainer2" unique_id=478005410]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "Use Touch UI"
+
+[node name="ForceTouchControls" type="OptionButton" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Controls/CenterContainer/Separator/CenterContainer/GridContainer2" unique_id=2014138056]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+selected = 0
+item_count = 2
+popup/item_0/text = "No"
+popup/item_0/id = 0
+popup/item_1/text = "Yes"
+popup/item_1/id = 1
+
+[node name="AutoTurnVehiclesLabel" type="Label" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Controls/CenterContainer/Separator/CenterContainer/GridContainer2" unique_id=1726706748]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+text = "Vehicles Auto Turn"
+
+[node name="AutoTurnVehicles" type="OptionButton" parent="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Controls/CenterContainer/Separator/CenterContainer/GridContainer2" unique_id=809054688]
+layout_mode = 2
+theme = ExtResource("1_ko6dn")
+selected = 0
+item_count = 2
+popup/item_0/text = "No"
+popup/item_0/id = 0
+popup/item_1/text = "Yes"
+popup/item_1/id = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="MainMargin/Panel" unique_id=1318493297]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -94.0
+offset_bottom = 94.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(1, 0)
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ExitButton" type="Button" parent="MainMargin/Panel/MarginContainer2" unique_id=147762604]
+layout_mode = 2
+text = "X"
+
+[connection signal="toggled" from="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer4/PerformanceToggle" to="." method="_on_performance_toggle_toggled"]
+[connection signal="item_selected" from="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer3/GridContainer3/UIScale" to="." method="_on_ui_scale_item_selected"]
+[connection signal="item_selected" from="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2/GridContainer/Resolution" to="." method="_on_resolution_item_selected"]
+[connection signal="item_selected" from="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2/GridContainer/WindowMode" to="." method="_on_window_mode_item_selected"]
+[connection signal="item_selected" from="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2/GridContainer/LimitFPS" to="." method="_on_limit_fps_item_selected"]
+[connection signal="item_selected" from="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2/GridContainer/VSync" to="." method="_on_v_sync_item_selected"]
+[connection signal="value_changed" from="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer2/GridContainer/HBoxContainer/FOV" to="." method="_on_fov_value_changed"]
+[connection signal="item_selected" from="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer/GridContainer2/PaintFilter" to="." method="_on_paint_filter_item_selected"]
+[connection signal="item_selected" from="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer/GridContainer2/PaintRes" to="." method="_on_paint_res_item_selected"]
+[connection signal="item_selected" from="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer/GridContainer2/SSAO" to="." method="_on_ssao_item_selected"]
+[connection signal="item_selected" from="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer/GridContainer2/ShadowRes" to="." method="_on_shadow_res_item_selected"]
+[connection signal="item_selected" from="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Graphics/CenterContainer/Separator/CenterContainer/GridContainer2/SurfaceScatter" to="." method="_on_surface_scatter_item_selected"]
+[connection signal="value_changed" from="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/CenterContainer/GridContainer/MasterVol" to="." method="_on_master_vol_value_changed"]
+[connection signal="value_changed" from="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/CenterContainer/GridContainer/MusicVol" to="." method="_on_music_vol_value_changed"]
+[connection signal="value_changed" from="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/CenterContainer/GridContainer/SFXVol" to="." method="_on_sfx_vol_value_changed"]
+[connection signal="value_changed" from="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Audio/CenterContainer/GridContainer/WindVol" to="." method="_on_wind_vol_value_changed"]
+[connection signal="value_changed" from="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Controls/CenterContainer/Separator/CenterContainer2/GridContainer/Sens" to="." method="_on_sens_value_changed"]
+[connection signal="item_selected" from="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Controls/CenterContainer/Separator/CenterContainer/GridContainer2/ForceTouchControls" to="." method="_on_force_touch_controls_item_selected"]
+[connection signal="item_selected" from="MainMargin/Panel/MarginContainer/VBoxContainer/TabContainer/Controls/CenterContainer/Separator/CenterContainer/GridContainer2/AutoTurnVehicles" to="." method="_on_auto_turn_vehicles_item_selected"]
+[connection signal="pressed" from="MainMargin/Panel/MarginContainer2/ExitButton" to="." method="_on_exit_button_pressed"]

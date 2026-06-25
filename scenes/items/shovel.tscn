@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dqlhm0gv0g5us"]
+
+[ext_resource type="Script" uid="uid://c2i3fohlxegf5" path="res://scripts/items/sword.gd" id="1_84da2"]
+[ext_resource type="PackedScene" uid="uid://dj1j3vbbb2e5r" path="res://assets/models/items/sword.blend" id="2_tr10c"]
+
+[node name="Shovel" type="Node3D" unique_id=955802473]
+script = ExtResource("1_84da2")
+
+[node name="sword" parent="." unique_id=1448502983 instance=ExtResource("2_tr10c")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+
+[editable path="sword"]

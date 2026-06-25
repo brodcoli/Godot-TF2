@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dmwufmix2c0c7"]
+
+[ext_resource type="Script" uid="uid://dtp2q3njhetur" path="res://scripts/characters/model_scripts/heavy_view_model.gd" id="1_4s61v"]
+[ext_resource type="PackedScene" uid="uid://cpnfi2s2v7olm" path="res://assets/models/characters/heavy_viewmodel.blend" id="1_icbfe"]
+
+[node name="HeavyViewModel" type="Node3D" unique_id=234526085 node_paths=PackedStringArray("held_item_attachment")]
+script = ExtResource("1_4s61v")
+held_item_attachment = NodePath("ItemBoneAttachment/Offset")
+
+[node name="heavy_viewmodel" parent="." unique_id=469621509 instance=ExtResource("1_icbfe")]
+
+[node name="ItemBoneAttachment" type="BoneAttachment3D" parent="." unique_id=1166557255]
+transform = Transform3D(0.17591102, -0.9843495, -0.010564733, 0.9843158, 0.17573935, 0.015429571, -0.013331309, -0.013113227, 0.99982524, -1.104601, 1.4404994, -0.18972369)
+bone_name = "item_hold.r"
+bone_idx = 26
+use_external_skeleton = true
+external_skeleton = NodePath("../heavy_viewmodel/Armature/Skeleton3D")
+
+[node name="Offset" type="Node3D" parent="ItemBoneAttachment" unique_id=1590920043]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+
+[editable path="heavy_viewmodel"]

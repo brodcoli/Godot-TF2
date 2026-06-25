@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://n2jwf071usq"]
+
+[ext_resource type="Script" uid="uid://etuplc3bream" path="res://global autoloads/chat_system/chat_system.gd" id="1_5y1s0"]
+
+[node name="ChatSystem" type="CanvasLayer" unique_id=366497436]
+script = ExtResource("1_5y1s0")

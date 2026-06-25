@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dgeku4bud52r0"]
+
+[resource]
+vertex_color_use_as_albedo = true
+use_z_clip_scale = true
+z_clip_scale = 0.04
+use_fov_override = true
+fov_override = 80.0

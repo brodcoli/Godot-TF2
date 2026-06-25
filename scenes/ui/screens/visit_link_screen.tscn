@@ -1,0 +1,292 @@
+[gd_scene format=3 uid="uid://b861pg5u2nkw8"]
+
+[ext_resource type="Script" uid="uid://cnr4lh4dhqsqp" path="res://scripts/ui/screens/visit_link_screen.gd" id="1_7phxp"]
+[ext_resource type="FontVariation" uid="uid://cvp8vo0nwwxv6" path="res://fonts/Fredoka.tres" id="1_eoy8m"]
+[ext_resource type="FontVariation" uid="uid://bl5djc4q68ac0" path="res://fonts/UbuntuMono.tres" id="2_7phxp"]
+[ext_resource type="Theme" uid="uid://d0f6ppcpwg8xh" path="res://themes/main_theme.tres" id="4_6hqpm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3me8m"]
+font = ExtResource("1_eoy8m")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_iqn1k"]
+font = ExtResource("2_7phxp")
+font_size = 24
+font_color = Color(0.85, 0.865, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydcei"]
+content_margin_left = 45.0
+content_margin_top = 7.0
+content_margin_right = 45.0
+content_margin_bottom = 7.0
+bg_color = Color(0.31, 0.1209, 0.1209, 0.41960785)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hqpm"]
+content_margin_left = 45.0
+content_margin_top = 7.0
+content_margin_right = 45.0
+content_margin_bottom = 7.0
+bg_color = Color(0, 0, 0, 0.41960785)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qo83g"]
+content_margin_left = 60.0
+content_margin_top = 7.0
+content_margin_right = 60.0
+content_margin_bottom = 7.0
+bg_color = Color(0.242, 0.44, 0.33110002, 0.41960785)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_qo83g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(712.5, 504)]
+}
+
+[sub_resource type="Animation" id="Animation_6hqpm"]
+resource_name = "play"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.56666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-67.5, 76), Vector2(-67.5, 18)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qo83g"]
+_data = {
+&"RESET": SubResource("Animation_qo83g"),
+&"play": SubResource("Animation_6hqpm")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_6hqpm"]
+font_size = 18
+font_color = Color(0.76250005, 1, 0.75, 1)
+shadow_size = 24
+shadow_color = Color(0, 0, 0, 0.23921569)
+shadow_offset = Vector2(0, 0)
+
+[node name="VisitLinkScreen" type="Control" unique_id=16660982]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_7phxp")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=802508911]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6901961)
+
+[node name="MainMargin" type="MarginContainer" parent="." unique_id=918308274]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_constants/margin_left = 420
+theme_override_constants/margin_top = 260
+theme_override_constants/margin_right = 420
+theme_override_constants/margin_bottom = 260
+
+[node name="ColorRect" type="ColorRect" parent="MainMargin" unique_id=1459626482]
+layout_mode = 2
+color = Color(0.08364042, 0.07515564, 0.08601298, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMargin/ColorRect" unique_id=758374456]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMargin/ColorRect/MarginContainer" unique_id=1407994611]
+layout_mode = 2
+theme_override_constants/separation = 19
+alignment = 1
+
+[node name="Label" type="Label" parent="MainMargin/ColorRect/MarginContainer/VBoxContainer" unique_id=1098177168]
+layout_mode = 2
+text = "Do you want to continue to this link?"
+label_settings = SubResource("LabelSettings_3me8m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="URLLabel" type="Label" parent="MainMargin/ColorRect/MarginContainer/VBoxContainer" unique_id=1969482796]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+text = "gddrehreiqhgruehreiuwghrtuoigddrehreiqhgruehreiuwghrtuoi"
+label_settings = SubResource("LabelSettings_iqn1k")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="MainMargin/ColorRect/MarginContainer/VBoxContainer/URLLabel" unique_id=567595221]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.023529412)
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMargin/ColorRect/MarginContainer/VBoxContainer" unique_id=1452611989]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMargin/ColorRect/MarginContainer/VBoxContainer/MarginContainer" unique_id=2048607257]
+layout_mode = 2
+theme_override_constants/separation = 31
+alignment = 1
+
+[node name="NoBtn" type="Button" parent="MainMargin/ColorRect/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=2013885385]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("4_6hqpm")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ydcei")
+text = "Cancel"
+
+[node name="CopyBtn" type="Button" parent="MainMargin/ColorRect/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=747709888]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("4_6hqpm")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_6hqpm")
+text = "Copy Link"
+
+[node name="YesBtn" type="Button" parent="MainMargin/ColorRect/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=494191524]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("4_6hqpm")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_qo83g")
+text = "Yes"
+
+[node name="ClipboardAnim" type="AnimationPlayer" parent="." unique_id=1357809383]
+root_node = NodePath("Control/Label")
+libraries/ = SubResource("AnimationLibrary_qo83g")
+
+[node name="Control" type="Control" parent="ClipboardAnim" unique_id=1944125918]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="ClipboardAnim/Control" unique_id=1453524960]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 692.5
+offset_top = 484.0
+offset_right = 867.5
+offset_bottom = 511.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Copied to clipboard!"
+label_settings = SubResource("LabelSettings_6hqpm")

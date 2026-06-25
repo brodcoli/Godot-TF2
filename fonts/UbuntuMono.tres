@@ -1,0 +1,9 @@
+[gd_resource type="FontVariation" format=3 uid="uid://bl5djc4q68ac0"]
+
+[ext_resource type="FontFile" uid="uid://cy7ro1s8tqnvi" path="res://assets/fonts/UbuntuMono-Bold.ttf" id="1_k4mfw"]
+
+[resource]
+base_font = ExtResource("1_k4mfw")
+variation_embolden = 0.1
+spacing_glyph = -1
+spacing_top = 1

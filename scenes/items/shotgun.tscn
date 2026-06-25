@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bkvw8p7caos72"]
+
+[ext_resource type="Script" uid="uid://diu52rubptxt1" path="res://scripts/items/gun.gd" id="1_u0ldb"]
+[ext_resource type="PackedScene" uid="uid://bdd4ncex2s75v" path="res://assets/models/items/gun.blend" id="2_eycir"]
+
+[node name="Shotgun" type="Node3D" unique_id=1837946501]
+script = ExtResource("1_u0ldb")
+
+[node name="gun" parent="." unique_id=1376205943 instance=ExtResource("2_eycir")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=380295239]
+
+[editable path="gun"]

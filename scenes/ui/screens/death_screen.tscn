@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://hvmtwfj3urie"]
+
+[ext_resource type="FontVariation" uid="uid://cvp8vo0nwwxv6" path="res://fonts/Fredoka.tres" id="1_bru7i"]
+
+[sub_resource type="Gradient" id="Gradient_ylu5v"]
+colors = PackedColorArray(0.08, 0.08, 0.08, 1, 0.29, 0.29, 0.29, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bru7i"]
+gradient = SubResource("Gradient_ylu5v")
+fill_from = Vector2(0.525641, 1)
+fill_to = Vector2(0.5, 0)
+
+[node name="DeathScreen" type="Control" unique_id=721730141]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="." unique_id=1736222161]
+self_modulate = Color(1, 1, 1, 0.8235294)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_bru7i")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=972385768]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -49.5
+offset_right = 122.0
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_bru7i")
+text = "YOU HAVE DIED. YOUR HEALTH WENT AT OR BELOW 0 AND NOW YOU ARE DEAD."
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

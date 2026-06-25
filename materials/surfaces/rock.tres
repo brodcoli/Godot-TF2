@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://kv0ifp63tbws"]
+
+[ext_resource type="Shader" uid="uid://cbv5vv6j3pq8n" path="res://materials/surfaces/standard.gdshader" id="1_kopqt"]
+[ext_resource type="Texture2D" uid="uid://c777jy4lbnga6" path="res://assets/textures/materials/Rock050/Rock050_1K-JPG_Color2.jpg" id="2_myxwu"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_kopqt")
+shader_parameter/albedo = ExtResource("2_myxwu")

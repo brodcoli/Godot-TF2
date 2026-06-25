@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bs1ifk66iv8j3"]
+
+[ext_resource type="PackedScene" uid="uid://bokittax8qbxn" path="res://assets/models/props/tree_aspen.blend" id="1_0bhjf"]
+[ext_resource type="Script" uid="uid://bdfyuf227lt5d" path="res://scripts/billboard_lod.gd" id="1_um1f3"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5j0yw"]
+height = 10.841797
+
+[node name="TreeAspen" type="StaticBody3D" unique_id=138244981 node_paths=PackedStringArray("model", "model_lod_med", "model_lod_low")]
+script = ExtResource("1_um1f3")
+model = NodePath("tree_aspen/Tree")
+model_lod_med = NodePath("tree_aspen/Tree_lod_med")
+model_lod_low = NodePath("tree_aspen/Tree_lod_low")
+distance_to_lod_med = 100.0
+distance_to_lod_low = 350.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=443055498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2229795, 0)
+shape = SubResource("CylinderShape3D_5j0yw")
+
+[node name="tree_aspen" parent="." unique_id=492513778 instance=ExtResource("1_0bhjf")]
+
+[editable path="tree_aspen"]

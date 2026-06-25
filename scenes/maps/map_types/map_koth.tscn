@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c66jjsy3nu0xy"]
+
+[ext_resource type="Script" uid="uid://bjjj0ycraxwrw" path="res://scripts/maps/map_types/map_koth.gd" id="1_qe5tv"]
+[ext_resource type="PackedScene" uid="uid://cs67oioq14w31" path="res://scenes/ui/control_point_ui.tscn" id="2_kntk5"]
+
+[node name="MapKoth" type="Node3D" unique_id=794349402]
+script = ExtResource("1_qe5tv")
+
+[node name="MapUI" type="CanvasLayer" parent="." unique_id=2061221093]
+
+[node name="Control" type="Control" parent="MapUI" unique_id=598215054]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ControlPointUI" parent="MapUI/Control" unique_id=1632332229 instance=ExtResource("2_kntk5")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = -111.0
+offset_right = 33.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 0

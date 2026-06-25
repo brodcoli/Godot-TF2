@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://y4rccdaq58do"]
+
+[ext_resource type="Texture2D" uid="uid://bqfpqykyao8lh" path="res://assets/textures/characters/paper_roll/paper_roll_color.jpg" id="1_v46q3"]
+
+[resource]
+albedo_color = Color(0.167675, 0.1615, 0.19, 1)
+albedo_texture = ExtResource("1_v46q3")
+metallic = 0.16
+roughness = 0.81

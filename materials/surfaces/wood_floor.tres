@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d1bdkdtm2vk7j"]
+
+[ext_resource type="Shader" uid="uid://cbv5vv6j3pq8n" path="res://materials/surfaces/standard.gdshader" id="1_en2xs"]
+[ext_resource type="Texture2D" uid="uid://ixwcdo8ywiu6" path="res://assets/textures/materials/WoodFloor041/WoodFloor041_1K-JPG_Color.jpg" id="2_i6jla"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_en2xs")
+shader_parameter/albedo = ExtResource("2_i6jla")

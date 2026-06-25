@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bt5tqren48w4k"]
+
+[ext_resource type="Shader" uid="uid://btxpa8vh6xpqv" path="res://materials/surfaces/splat_map_2.gdshader" id="1_pwhfc"]
+[ext_resource type="Texture2D" uid="uid://c777jy4lbnga6" path="res://assets/textures/materials/Rock050/Rock050_1K-JPG_Color2.jpg" id="2_tecfh"]
+[ext_resource type="Texture2D" uid="uid://7we6q5u833g" path="res://assets/textures/materials/Grass005/Grass005_1K-JPG_Color.jpg" id="4_a4gf6"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_pwhfc")
+shader_parameter/black_albedo = ExtResource("2_tecfh")
+shader_parameter/white_albedo = ExtResource("4_a4gf6")
+shader_parameter/blend_height = ExtResource("2_tecfh")
+shader_parameter/normal_strength = 0.2
+shader_parameter/height_strength = 1.0
+shader_parameter/blend_softness = 0.12
+shader_parameter/height_midpoint = 0.41999999061216
+shader_parameter/height_belongs_to_white = true

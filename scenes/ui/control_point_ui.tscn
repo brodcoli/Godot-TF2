@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://cs67oioq14w31"]
+
+[ext_resource type="Script" uid="uid://bpnldqplkt8qs" path="res://scripts/ui/control_point_ui.gd" id="1_7n6g8"]
+[ext_resource type="FontVariation" uid="uid://cvp8vo0nwwxv6" path="res://fonts/Fredoka.tres" id="2_t5njd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_countdown_label"]
+font = ExtResource("2_t5njd")
+font_size = 32
+font_color = Color(0.95596474, 0.95596296, 0.9559633, 1)
+
+[node name="ControlPointUI" type="Control" unique_id=1632332229]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 66.0
+offset_bottom = 66.0
+script = ExtResource("1_7n6g8")
+
+[node name="BG" type="ColorRect" parent="." unique_id=514359873]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.86, 0.86, 0.86, 0.8784314)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1609484143]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Fill" type="ColorRect" parent="MarginContainer" unique_id=2120384668]
+modulate = Color(1, 1, 1, 0.8039216)
+layout_mode = 2
+color = Color(0.4186326, 0.43729565, 0.46341956, 1)
+
+[node name="CaptureProgressMargin" type="MarginContainer" parent="." unique_id=1729007465]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="CaptureProgress" type="Control" parent="CaptureProgressMargin" unique_id=1325037314]
+modulate = Color(1, 1, 1, 0.8039216)
+clip_contents = true
+layout_mode = 2
+
+[node name="CaptureProgressFill" type="ColorRect" parent="CaptureProgressMargin/CaptureProgress" unique_id=1304117549]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1022294931]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="CountdownLabel" type="Label" parent="MarginContainer2" unique_id=1175629327]
+unique_name_in_owner = true
+layout_mode = 2
+text = "🔒"
+label_settings = SubResource("LabelSettings_countdown_label")
+horizontal_alignment = 1
+vertical_alignment = 1

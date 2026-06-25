@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dycw1smscmb5i"]
+
+[ext_resource type="Script" uid="uid://bsit0slix576j" path="res://scripts/items/launcher.gd" id="1_mnvp6"]
+[ext_resource type="PackedScene" uid="uid://bvkegxsmh56um" path="res://assets/models/items/launcher.blend" id="2_mkylq"]
+[ext_resource type="PackedScene" uid="uid://cv801ihlow4kq" path="res://scenes/ui/hud_side_panel.tscn" id="3_qcyqs"]
+
+[node name="Launcher" type="Node3D" unique_id=1675114535 node_paths=PackedStringArray("launch_pos")]
+script = ExtResource("1_mnvp6")
+launch_pos = NodePath("LaunchPos")
+
+[node name="launcher" parent="." unique_id=724008745 instance=ExtResource("2_mkylq")]
+
+[node name="LaunchPos" type="Marker3D" parent="." unique_id=718882435]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14881763, -0.4558597)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1189087710]
+
+[node name="HudSidePanel" parent="CanvasLayer" unique_id=1625897352 instance=ExtResource("3_qcyqs")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -286.0
+offset_top = -191.0
+offset_right = -66.0
+offset_bottom = -61.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[editable path="launcher"]

@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bmjqmyiip7m16"]
+
+[ext_resource type="Shader" uid="uid://dx1m181cnmt7b" path="res://materials/surfaces/standard_alpha_scissor.gdshader" id="1_g5ab5"]
+[ext_resource type="Texture2D" uid="uid://jklvnn10n8w4" path="res://assets/textures/materials/Fence008A/Fence008A_1K-PNG_Color.jpg" id="2_g5ab5"]
+[ext_resource type="Texture2D" uid="uid://d2crcrvjh5j8t" path="res://assets/textures/materials/Fence008A/Fence008A_1K-PNG_Opacity.jpg" id="3_njfy2"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_g5ab5")
+shader_parameter/albedo = ExtResource("2_g5ab5")
+shader_parameter/opacity = ExtResource("3_njfy2")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/normal_stength = 0.0

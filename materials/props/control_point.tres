@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bseef31s4lqw2"]
+
+[ext_resource type="Shader" uid="uid://8388hijh2f3p" path="res://materials/props/control_point.gdshader" id="1_57s1p"]
+[ext_resource type="Texture2D" uid="uid://bj3stq7fmcwqr" path="res://assets/textures/props/control_point.png" id="2_ejl7k"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_57s1p")
+shader_parameter/albedo = ExtResource("2_ejl7k")
+shader_parameter/light_color = Color(0.35, 0.35, 0.35, 1)

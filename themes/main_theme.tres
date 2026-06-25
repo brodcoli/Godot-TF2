@@ -1,0 +1,39 @@
+[gd_resource type="Theme" format=3 uid="uid://d0f6ppcpwg8xh"]
+
+[ext_resource type="FontVariation" uid="uid://cvp8vo0nwwxv6" path="res://fonts/Fredoka.tres" id="2_0omi4"]
+[ext_resource type="StyleBox" uid="uid://bjotbomwlg2h1" path="res://themes/button_normal.tres" id="2_a2l2q"]
+[ext_resource type="StyleBox" uid="uid://dgl2r54a0f1mk" path="res://themes/option_btn_normal.tres" id="2_vu6l5"]
+[ext_resource type="StyleBox" uid="uid://clm1mbhfhgfgr" path="res://themes/option_btn_hover.tres" id="3_8gw6x"]
+
+[sub_resource type="FontVariation" id="FontVariation_gnfd7"]
+base_font = ExtResource("2_0omi4")
+variation_opentype = {
+2003072104: 100,
+2003265652: 450
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37iap"]
+bg_color = Color(0.14, 0.14, 0.14, 0.5019608)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2l2q"]
+bg_color = Color(0.17, 0.17, 0.17, 1)
+
+[resource]
+default_font = ExtResource("2_0omi4")
+default_font_size = 24
+Button/fonts/font = SubResource("FontVariation_gnfd7")
+Button/styles/hover = SubResource("StyleBoxFlat_37iap")
+Button/styles/normal = ExtResource("2_a2l2q")
+Label/font_sizes/font_size = 18
+OptionButton/constants/h_separation = 24
+OptionButton/font_sizes/font_size = 16
+OptionButton/styles/hover = ExtResource("3_8gw6x")
+OptionButton/styles/normal = ExtResource("2_vu6l5")
+Panel/styles/panel = SubResource("StyleBoxFlat_a2l2q")
+TabContainer/constants/tab_separation = 1
+TabContainer/font_sizes/font_size = 18

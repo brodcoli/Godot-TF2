@@ -1,0 +1,466 @@
+[gd_scene format=3 uid="uid://cgdp4ej5kyw7"]
+
+[ext_resource type="Script" uid="uid://ctgi6scu8mrvq" path="res://global autoloads/audio_manager/audio_manager.gd" id="1_lja2p"]
+[ext_resource type="AudioStream" uid="uid://bqeb1fwb1b35y" path="res://assets/audio/wind_prev_backup.mp3" id="2_1jg2n"]
+[ext_resource type="AudioStream" uid="uid://ce4p7iajbls82" path="res://assets/audio/launcher/launcher_fail.mp3" id="2_i73ij"]
+[ext_resource type="AudioStream" uid="uid://dx6oe3g40fetx" path="res://assets/audio/launcher/fail/4.mp3" id="3_21gcb"]
+[ext_resource type="AudioStream" uid="uid://k8e1wxvexnh2" path="res://assets/audio/launcher/fail/2.mp3" id="4_royym"]
+[ext_resource type="AudioStream" uid="uid://cwt7oh3ba35ui" path="res://assets/audio/launcher/fail/1.mp3" id="5_rukw4"]
+[ext_resource type="AudioStream" uid="uid://dj11vhp5y3v3g" path="res://assets/audio/launcher/fail/3.mp3" id="6_75hj0"]
+[ext_resource type="AudioStream" uid="uid://yw5q0ny7n0c3" path="res://assets/audio/launcher/fire/4.mp3" id="7_rqbqc"]
+[ext_resource type="AudioStream" uid="uid://yhsms8gq3cj2" path="res://assets/audio/launcher/fire/2.mp3" id="8_b0vvc"]
+[ext_resource type="AudioStream" uid="uid://doje0y4hfvcnm" path="res://assets/audio/launcher/fire/5.mp3" id="9_rkjtr"]
+[ext_resource type="AudioStream" uid="uid://vp82eygk3ds4" path="res://assets/audio/launcher/fire/1.mp3" id="10_a34xw"]
+[ext_resource type="AudioStream" uid="uid://4dpf2umjrggr" path="res://assets/audio/launcher/fire/6.mp3" id="11_7cu0c"]
+[ext_resource type="AudioStream" uid="uid://dqml0pbwgsaxa" path="res://assets/audio/launcher/fire/3.mp3" id="12_wf7oe"]
+[ext_resource type="AudioStream" uid="uid://lijdw0l2qpuv" path="res://assets/audio/materials/dirt/dirt_low_impact3.mp3" id="13_j3fg1"]
+[ext_resource type="AudioStream" uid="uid://bjw34vvdb5py4" path="res://assets/audio/materials/dirt/dirt_low_impact1.mp3" id="14_i6lkg"]
+[ext_resource type="AudioStream" uid="uid://3w4o7v16ps8h" path="res://assets/audio/materials/dirt/dirt_low_impact6.mp3" id="15_u077t"]
+[ext_resource type="AudioStream" uid="uid://ea6j8vmgvow7" path="res://assets/audio/materials/dirt/dirt_low_impact5.mp3" id="16_4uq3y"]
+[ext_resource type="AudioStream" uid="uid://ccu823wf5m8f7" path="res://assets/audio/materials/dirt/dirt_low_impact2.mp3" id="17_pe4n6"]
+[ext_resource type="AudioStream" uid="uid://ds8wqsnt4hgay" path="res://assets/audio/materials/dirt/dirt_low_impact7.mp3" id="18_hosq5"]
+[ext_resource type="AudioStream" uid="uid://08d8en8xnthh" path="res://assets/audio/materials/dirt/dirt_low_impact4.mp3" id="19_vv32q"]
+[ext_resource type="AudioStream" uid="uid://cl5klddebqx2q" path="res://assets/audio/materials/grass/grass_low_impact1.mp3" id="20_faiot"]
+[ext_resource type="AudioStream" uid="uid://k21sfh35lh04" path="res://assets/audio/materials/grass/grass_low_impact3.mp3" id="21_xftem"]
+[ext_resource type="AudioStream" uid="uid://dik7sdq0boqyv" path="res://assets/audio/materials/grass/grass_low_impact2.mp3" id="22_sc2rj"]
+[ext_resource type="AudioStream" uid="uid://d2v5kiden5frt" path="res://assets/audio/materials/sand/sand_low_impact3.mp3" id="23_lxw0k"]
+[ext_resource type="AudioStream" uid="uid://bhadhqyxcvheu" path="res://assets/audio/materials/sand/sand_low_impact5.mp3" id="24_4arlb"]
+[ext_resource type="AudioStream" uid="uid://blwpkey3li6rn" path="res://assets/audio/materials/sand/sand_low_impact6.mp3" id="25_bcesu"]
+[ext_resource type="AudioStream" uid="uid://jawbfkvsy6fp" path="res://assets/audio/materials/sand/sand_low_impact2.mp3" id="26_uq7ra"]
+[ext_resource type="AudioStream" uid="uid://xk3m0j5lair3" path="res://assets/audio/materials/sand/sand_low_impact7.mp3" id="27_06m6r"]
+[ext_resource type="AudioStream" uid="uid://bed3fgba44uwu" path="res://assets/audio/materials/sand/sand_low_impact1.mp3" id="28_bjvv5"]
+[ext_resource type="AudioStream" uid="uid://cgmi6g6pviml1" path="res://assets/audio/materials/sand/sand_low_impact4.mp3" id="29_cc1jx"]
+[ext_resource type="AudioStream" uid="uid://cghd2iv65hsqx" path="res://assets/audio/materials/robo_metal/1.wav" id="30_55l58"]
+[ext_resource type="AudioStream" uid="uid://ccfs01du1ukri" path="res://assets/audio/materials/stone_tile/stone_tile_low_impact1.mp3" id="31_4fdj8"]
+[ext_resource type="AudioStream" uid="uid://boa455utkn5fo" path="res://assets/audio/materials/stone_tile/stone_tile_low_impact3.mp3" id="32_r7unv"]
+[ext_resource type="AudioStream" uid="uid://bjwtgnl1pouyr" path="res://assets/audio/materials/stone_tile/stone_tile_low_impact2.mp3" id="33_q60fk"]
+[ext_resource type="AudioStream" uid="uid://4xsbgm8bb0a3" path="res://assets/audio/materials/stone_tile/stone_tile_low_impact4.mp3" id="34_1jg2n"]
+[ext_resource type="AudioStream" uid="uid://dlrfl3a3nywna" path="res://assets/audio/materials/snow/snow_low_impact1.mp3" id="35_oy3ii"]
+[ext_resource type="AudioStream" uid="uid://ba7yakkc2wt7u" path="res://assets/audio/materials/snow/snow_low_impact4.mp3" id="36_exfrs"]
+[ext_resource type="AudioStream" uid="uid://jvjt3vag38ov" path="res://assets/audio/materials/snow/snow_low_impact3.mp3" id="37_fo1as"]
+[ext_resource type="AudioStream" uid="uid://c64jmf5e2wqu5" path="res://assets/audio/materials/snow/snow_low_impact2.mp3" id="38_8qcla"]
+[ext_resource type="AudioStream" uid="uid://dmfo7djkhanuo" path="res://assets/audio/materials/snow/snow_low_impact5.mp3" id="39_pwnsb"]
+[ext_resource type="AudioStream" uid="uid://oj2vnfw7mtlf" path="res://assets/audio/materials/snow/snow_low_impact6.mp3" id="40_aqqxl"]
+[ext_resource type="AudioStream" uid="uid://bkl0p32mfqm8s" path="res://assets/audio/materials/snow/snow_low_impact7.mp3" id="41_cn8lg"]
+[ext_resource type="AudioStream" uid="uid://b8duq1qjty60n" path="res://assets/audio/materials/carpet/4.mp3" id="42_t2g3f"]
+[ext_resource type="AudioStream" uid="uid://c1ljk6fg58eo7" path="res://assets/audio/materials/carpet/2.mp3" id="43_ifyee"]
+[ext_resource type="AudioStream" uid="uid://cmahuyitsj13y" path="res://assets/audio/birds_chirping/4.mp3" id="44_8xral"]
+[ext_resource type="AudioStream" uid="uid://c1g7qbpkd6wp6" path="res://assets/audio/materials/carpet/5.mp3" id="44_e5tml"]
+[ext_resource type="AudioStream" uid="uid://dwgmdxyi8ak4r" path="res://assets/audio/materials/carpet/1.mp3" id="45_eytcm"]
+[ext_resource type="AudioStream" uid="uid://cuiirqorp0erh" path="res://assets/audio/birds_chirping/2.mp3" id="45_wyjd6"]
+[ext_resource type="AudioStream" uid="uid://oit047tcjlp1" path="res://assets/audio/birds_chirping/5.mp3" id="46_3j2w8"]
+[ext_resource type="AudioStream" uid="uid://bmj5cext4b4g4" path="res://assets/audio/materials/carpet/3.mp3" id="46_k8iwv"]
+[ext_resource type="AudioStream" uid="uid://sa0ydrow3ui4" path="res://assets/audio/materials/wood/wood_low_impact2.mp3" id="47_37ou0"]
+[ext_resource type="AudioStream" uid="uid://cxwkuvlf28qkv" path="res://assets/audio/birds_chirping/1.mp3" id="47_fbrmv"]
+[ext_resource type="AudioStream" uid="uid://dt56rdeqssq4m" path="res://assets/audio/materials/wood/wood_low_impact3.mp3" id="48_7fbsj"]
+[ext_resource type="AudioStream" uid="uid://eqjmls3500uu" path="res://assets/audio/birds_chirping/6.mp3" id="48_ke5tw"]
+[ext_resource type="AudioStream" uid="uid://w60w0s3ng1fy" path="res://assets/audio/birds_chirping/3.mp3" id="49_h7njp"]
+[ext_resource type="AudioStream" uid="uid://ux6eqtnjqusr" path="res://assets/audio/materials/wood/wood_low_impact4.mp3" id="49_xb10i"]
+[ext_resource type="AudioStream" uid="uid://blpibl5mpegdl" path="res://assets/audio/materials/wood/wood_low_impact1.mp3" id="50_psu1v"]
+[ext_resource type="AudioStream" uid="uid://bh1lnx1mbijux" path="res://assets/audio/materials/rock/4.mp3" id="51_nh0ab"]
+[ext_resource type="AudioStream" uid="uid://boe8x5nj2vxht" path="res://assets/audio/button_press.mp3" id="52_ac18r"]
+[ext_resource type="AudioStream" uid="uid://dvefo6h38a257" path="res://assets/audio/materials/rock/2.mp3" id="52_bj15m"]
+[ext_resource type="AudioStream" uid="uid://v1mhmi6cqiei" path="res://assets/audio/materials/rock/5.mp3" id="53_efs3s"]
+[ext_resource type="AudioStream" uid="uid://be3oj4dep2rpi" path="res://assets/audio/materials/rock/1.mp3" id="54_ts7y7"]
+[ext_resource type="AudioStream" uid="uid://f1pk6i1xtyar" path="res://assets/audio/materials/rock/3.mp3" id="55_8vvel"]
+[ext_resource type="AudioStream" uid="uid://w0u2r45876dy" path="res://assets/audio/vehicle/motorcycle_thud_old.mp3" id="62_pe4n6"]
+[ext_resource type="AudioStream" uid="uid://0ui2a8alcma1" path="res://assets/audio/vehicle/metal_hit/motorcycle_hit3.mp3" id="63_pe4n6"]
+[ext_resource type="AudioStream" uid="uid://es4pqxtl36xt" path="res://assets/audio/vehicle/metal_hit/motorcycle_hit2.mp3" id="64_hosq5"]
+[ext_resource type="AudioStream" uid="uid://d30ymw0mh3b5f" path="res://assets/audio/vehicle/metal_hit/motorcycle_hit1.mp3" id="65_vv32q"]
+[ext_resource type="AudioStream" uid="uid://dc52phxhe8vw7" path="res://assets/audio/vehicle/engine_revving_loop.mp3" id="66_xftem"]
+[ext_resource type="AudioStream" uid="uid://bb7d04eytcpl5" path="res://assets/audio/vehicle/motorcycle_thud.mp3" id="67_sc2rj"]
+[ext_resource type="AudioStream" uid="uid://c245qwfn0adui" path="res://assets/audio/vehicle/engine_revving_initial.mp3" id="68_lxw0k"]
+[ext_resource type="AudioStream" uid="uid://e2c4ebspt086" path="res://assets/audio/ambience/engine_hum/2.mp3" id="71_4arlb"]
+[ext_resource type="AudioStream" uid="uid://brv8c3aq61s5" path="res://assets/audio/water/splash_big/splash_big1.mp3" id="71_oy3ii"]
+[ext_resource type="AudioStream" uid="uid://cjjlbkovk6owg" path="res://assets/audio/ambience/engine_hum/1.mp3" id="72_bcesu"]
+[ext_resource type="AudioStream" uid="uid://c2fjyr8752yyx" path="res://assets/audio/water/splash_big/splash_big2.mp3" id="72_exfrs"]
+[ext_resource type="AudioStream" uid="uid://x1v3hhrkfrfp" path="res://assets/audio/ambience/engine_hum/3.mp3" id="73_uq7ra"]
+[ext_resource type="AudioStream" uid="uid://ca3j57nkvgmas" path="res://assets/audio/ambience/wind_ambience1.mp3" id="74_06m6r"]
+[ext_resource type="AudioStream" uid="uid://b81pfebp8fu6k" path="res://assets/audio/water/splash_small/s1.mp3" id="74_fo1as"]
+[ext_resource type="AudioStream" uid="uid://dtsvcqw1wa58b" path="res://assets/audio/water/splash_small/s3.mp3" id="75_8qcla"]
+[ext_resource type="AudioStream" uid="uid://ctfyu8j41na3x" path="res://assets/audio/ambience/turbines/2.mp3" id="75_bjvv5"]
+[ext_resource type="AudioStream" uid="uid://bvhg1nohtxx77" path="res://assets/audio/ambience/turbines/1.mp3" id="76_cc1jx"]
+[ext_resource type="AudioStream" uid="uid://dyrigp5gpe2fg" path="res://assets/audio/water/splash_small/s2.mp3" id="76_pwnsb"]
+[ext_resource type="AudioStream" uid="uid://b0yi7khilvb6b" path="res://assets/audio/ambience/turbines/3.mp3" id="77_55l58"]
+[ext_resource type="AudioStream" uid="uid://dwns1ervhpra1" path="res://assets/audio/ambience/winter_wind.mp3" id="78_4fdj8"]
+[ext_resource type="AudioStream" uid="uid://2axf571yvbuh" path="res://assets/audio/wind.mp3" id="93_1pxxi"]
+
+[node name="AudioManager" type="Node3D" unique_id=483186460]
+script = ExtResource("1_lja2p")
+audio_directory = "assets/audio"
+
+[node name="wind_prev_backup" type="AudioStreamPlayer3D" parent="." unique_id=739865992]
+stream = ExtResource("2_1jg2n")
+panning_strength = 2.0
+
+[node name="launcher" type="Node3D" parent="." unique_id=1658393984]
+
+[node name="launcher_fail" type="AudioStreamPlayer3D" parent="launcher" unique_id=1869596084]
+stream = ExtResource("2_i73ij")
+panning_strength = 2.0
+
+[node name="fail" type="Node3D" parent="launcher" unique_id=560433862]
+
+[node name="4" type="AudioStreamPlayer3D" parent="launcher/fail" unique_id=698722425]
+stream = ExtResource("3_21gcb")
+panning_strength = 2.0
+
+[node name="2" type="AudioStreamPlayer3D" parent="launcher/fail" unique_id=1365277366]
+stream = ExtResource("4_royym")
+panning_strength = 2.0
+
+[node name="1" type="AudioStreamPlayer3D" parent="launcher/fail" unique_id=597793833]
+stream = ExtResource("5_rukw4")
+panning_strength = 2.0
+
+[node name="3" type="AudioStreamPlayer3D" parent="launcher/fail" unique_id=767857454]
+stream = ExtResource("6_75hj0")
+panning_strength = 2.0
+
+[node name="fire" type="Node3D" parent="launcher" unique_id=296588045]
+
+[node name="4" type="AudioStreamPlayer3D" parent="launcher/fire" unique_id=269193770]
+stream = ExtResource("7_rqbqc")
+panning_strength = 2.0
+
+[node name="2" type="AudioStreamPlayer3D" parent="launcher/fire" unique_id=1989359239]
+stream = ExtResource("8_b0vvc")
+panning_strength = 2.0
+
+[node name="5" type="AudioStreamPlayer3D" parent="launcher/fire" unique_id=519453800]
+stream = ExtResource("9_rkjtr")
+panning_strength = 2.0
+
+[node name="1" type="AudioStreamPlayer3D" parent="launcher/fire" unique_id=183775669]
+stream = ExtResource("10_a34xw")
+panning_strength = 2.0
+
+[node name="6" type="AudioStreamPlayer3D" parent="launcher/fire" unique_id=1031610252]
+stream = ExtResource("11_7cu0c")
+panning_strength = 2.0
+
+[node name="3" type="AudioStreamPlayer3D" parent="launcher/fire" unique_id=204160956]
+stream = ExtResource("12_wf7oe")
+panning_strength = 2.0
+
+[node name="materials" type="Node3D" parent="." unique_id=1275303684]
+
+[node name="dirt" type="Node3D" parent="materials" unique_id=2132807500]
+
+[node name="dirt_low_impact3" type="AudioStreamPlayer3D" parent="materials/dirt" unique_id=154561903]
+stream = ExtResource("13_j3fg1")
+panning_strength = 2.0
+
+[node name="dirt_low_impact1" type="AudioStreamPlayer3D" parent="materials/dirt" unique_id=591139357]
+stream = ExtResource("14_i6lkg")
+panning_strength = 2.0
+
+[node name="dirt_low_impact6" type="AudioStreamPlayer3D" parent="materials/dirt" unique_id=1894082678]
+stream = ExtResource("15_u077t")
+panning_strength = 2.0
+
+[node name="dirt_low_impact5" type="AudioStreamPlayer3D" parent="materials/dirt" unique_id=1265861773]
+stream = ExtResource("16_4uq3y")
+panning_strength = 2.0
+
+[node name="dirt_low_impact2" type="AudioStreamPlayer3D" parent="materials/dirt" unique_id=423555916]
+stream = ExtResource("17_pe4n6")
+panning_strength = 2.0
+
+[node name="dirt_low_impact7" type="AudioStreamPlayer3D" parent="materials/dirt" unique_id=1892447906]
+stream = ExtResource("18_hosq5")
+panning_strength = 2.0
+
+[node name="dirt_low_impact4" type="AudioStreamPlayer3D" parent="materials/dirt" unique_id=894115864]
+stream = ExtResource("19_vv32q")
+panning_strength = 2.0
+
+[node name="grass" type="Node3D" parent="materials" unique_id=1109987596]
+
+[node name="grass_low_impact1" type="AudioStreamPlayer3D" parent="materials/grass" unique_id=519762660]
+stream = ExtResource("20_faiot")
+panning_strength = 2.0
+
+[node name="grass_low_impact3" type="AudioStreamPlayer3D" parent="materials/grass" unique_id=280261397]
+stream = ExtResource("21_xftem")
+panning_strength = 2.0
+
+[node name="grass_low_impact2" type="AudioStreamPlayer3D" parent="materials/grass" unique_id=745036278]
+stream = ExtResource("22_sc2rj")
+panning_strength = 2.0
+
+[node name="sand" type="Node3D" parent="materials" unique_id=757979136]
+
+[node name="sand_low_impact3" type="AudioStreamPlayer3D" parent="materials/sand" unique_id=964519420]
+stream = ExtResource("23_lxw0k")
+panning_strength = 2.0
+
+[node name="sand_low_impact5" type="AudioStreamPlayer3D" parent="materials/sand" unique_id=1141199781]
+stream = ExtResource("24_4arlb")
+panning_strength = 2.0
+
+[node name="sand_low_impact6" type="AudioStreamPlayer3D" parent="materials/sand" unique_id=42436729]
+stream = ExtResource("25_bcesu")
+panning_strength = 2.0
+
+[node name="sand_low_impact2" type="AudioStreamPlayer3D" parent="materials/sand" unique_id=265983069]
+stream = ExtResource("26_uq7ra")
+panning_strength = 2.0
+
+[node name="sand_low_impact7" type="AudioStreamPlayer3D" parent="materials/sand" unique_id=1355743017]
+stream = ExtResource("27_06m6r")
+panning_strength = 2.0
+
+[node name="sand_low_impact1" type="AudioStreamPlayer3D" parent="materials/sand" unique_id=1614402242]
+stream = ExtResource("28_bjvv5")
+panning_strength = 2.0
+
+[node name="sand_low_impact4" type="AudioStreamPlayer3D" parent="materials/sand" unique_id=588726979]
+stream = ExtResource("29_cc1jx")
+panning_strength = 2.0
+
+[node name="robo_metal" type="Node3D" parent="materials" unique_id=2004517857]
+
+[node name="1" type="AudioStreamPlayer3D" parent="materials/robo_metal" unique_id=676263831]
+stream = ExtResource("30_55l58")
+panning_strength = 2.0
+
+[node name="stone_tile" type="Node3D" parent="materials" unique_id=2137621327]
+
+[node name="stone_tile_low_impact1" type="AudioStreamPlayer3D" parent="materials/stone_tile" unique_id=955144433]
+stream = ExtResource("31_4fdj8")
+panning_strength = 2.0
+
+[node name="stone_tile_low_impact3" type="AudioStreamPlayer3D" parent="materials/stone_tile" unique_id=773602509]
+stream = ExtResource("32_r7unv")
+panning_strength = 2.0
+
+[node name="stone_tile_low_impact2" type="AudioStreamPlayer3D" parent="materials/stone_tile" unique_id=323328131]
+stream = ExtResource("33_q60fk")
+panning_strength = 2.0
+
+[node name="stone_tile_low_impact4" type="AudioStreamPlayer3D" parent="materials/stone_tile" unique_id=1739363910]
+stream = ExtResource("34_1jg2n")
+panning_strength = 2.0
+
+[node name="snow" type="Node3D" parent="materials" unique_id=1865798678]
+
+[node name="snow_low_impact1" type="AudioStreamPlayer3D" parent="materials/snow" unique_id=1928670135]
+stream = ExtResource("35_oy3ii")
+panning_strength = 2.0
+
+[node name="snow_low_impact4" type="AudioStreamPlayer3D" parent="materials/snow" unique_id=856781485]
+stream = ExtResource("36_exfrs")
+panning_strength = 2.0
+
+[node name="snow_low_impact3" type="AudioStreamPlayer3D" parent="materials/snow" unique_id=1953173998]
+stream = ExtResource("37_fo1as")
+panning_strength = 2.0
+
+[node name="snow_low_impact2" type="AudioStreamPlayer3D" parent="materials/snow" unique_id=355905910]
+stream = ExtResource("38_8qcla")
+panning_strength = 2.0
+
+[node name="snow_low_impact5" type="AudioStreamPlayer3D" parent="materials/snow" unique_id=173266193]
+stream = ExtResource("39_pwnsb")
+panning_strength = 2.0
+
+[node name="snow_low_impact6" type="AudioStreamPlayer3D" parent="materials/snow" unique_id=1933334698]
+stream = ExtResource("40_aqqxl")
+panning_strength = 2.0
+
+[node name="snow_low_impact7" type="AudioStreamPlayer3D" parent="materials/snow" unique_id=1479538665]
+stream = ExtResource("41_cn8lg")
+panning_strength = 2.0
+
+[node name="carpet" type="Node3D" parent="materials" unique_id=1695420851]
+
+[node name="4" type="AudioStreamPlayer3D" parent="materials/carpet" unique_id=1713299682]
+stream = ExtResource("42_t2g3f")
+panning_strength = 2.0
+
+[node name="2" type="AudioStreamPlayer3D" parent="materials/carpet" unique_id=175439600]
+stream = ExtResource("43_ifyee")
+panning_strength = 2.0
+
+[node name="5" type="AudioStreamPlayer3D" parent="materials/carpet" unique_id=1338813442]
+stream = ExtResource("44_e5tml")
+panning_strength = 2.0
+
+[node name="1" type="AudioStreamPlayer3D" parent="materials/carpet" unique_id=2062901611]
+stream = ExtResource("45_eytcm")
+panning_strength = 2.0
+
+[node name="3" type="AudioStreamPlayer3D" parent="materials/carpet" unique_id=1533921327]
+stream = ExtResource("46_k8iwv")
+panning_strength = 2.0
+
+[node name="wood" type="Node3D" parent="materials" unique_id=2022215833]
+
+[node name="wood_low_impact2" type="AudioStreamPlayer3D" parent="materials/wood" unique_id=635870113]
+stream = ExtResource("47_37ou0")
+panning_strength = 2.0
+
+[node name="wood_low_impact3" type="AudioStreamPlayer3D" parent="materials/wood" unique_id=764247191]
+stream = ExtResource("48_7fbsj")
+panning_strength = 2.0
+
+[node name="wood_low_impact4" type="AudioStreamPlayer3D" parent="materials/wood" unique_id=732007712]
+stream = ExtResource("49_xb10i")
+panning_strength = 2.0
+
+[node name="wood_low_impact1" type="AudioStreamPlayer3D" parent="materials/wood" unique_id=1817726608]
+stream = ExtResource("50_psu1v")
+panning_strength = 2.0
+
+[node name="rock" type="Node3D" parent="materials" unique_id=945399355]
+
+[node name="4" type="AudioStreamPlayer3D" parent="materials/rock" unique_id=1503111877]
+stream = ExtResource("51_nh0ab")
+panning_strength = 2.0
+
+[node name="2" type="AudioStreamPlayer3D" parent="materials/rock" unique_id=1107390117]
+stream = ExtResource("52_bj15m")
+panning_strength = 2.0
+
+[node name="5" type="AudioStreamPlayer3D" parent="materials/rock" unique_id=1001159522]
+stream = ExtResource("53_efs3s")
+panning_strength = 2.0
+
+[node name="1" type="AudioStreamPlayer3D" parent="materials/rock" unique_id=138131007]
+stream = ExtResource("54_ts7y7")
+panning_strength = 2.0
+
+[node name="3" type="AudioStreamPlayer3D" parent="materials/rock" unique_id=279664099]
+stream = ExtResource("55_8vvel")
+panning_strength = 2.0
+
+[node name="birds_chirping" type="Node3D" parent="." unique_id=2135920667]
+
+[node name="4" type="AudioStreamPlayer3D" parent="birds_chirping" unique_id=1985534498]
+stream = ExtResource("44_8xral")
+panning_strength = 2.0
+
+[node name="2" type="AudioStreamPlayer3D" parent="birds_chirping" unique_id=1353676180]
+stream = ExtResource("45_wyjd6")
+panning_strength = 2.0
+
+[node name="5" type="AudioStreamPlayer3D" parent="birds_chirping" unique_id=599427473]
+stream = ExtResource("46_3j2w8")
+panning_strength = 2.0
+
+[node name="1" type="AudioStreamPlayer3D" parent="birds_chirping" unique_id=1783971473]
+stream = ExtResource("47_fbrmv")
+panning_strength = 2.0
+
+[node name="6" type="AudioStreamPlayer3D" parent="birds_chirping" unique_id=1072058731]
+stream = ExtResource("48_ke5tw")
+panning_strength = 2.0
+
+[node name="3" type="AudioStreamPlayer3D" parent="birds_chirping" unique_id=1859516725]
+stream = ExtResource("49_h7njp")
+panning_strength = 2.0
+
+[node name="vehicle" type="Node3D" parent="." unique_id=667944460]
+
+[node name="motorcycle_thud_old" type="AudioStreamPlayer3D" parent="vehicle" unique_id=676966593]
+stream = ExtResource("62_pe4n6")
+panning_strength = 2.0
+
+[node name="metal_hit" type="Node3D" parent="vehicle" unique_id=1969646171]
+
+[node name="motorcycle_hit3" type="AudioStreamPlayer3D" parent="vehicle/metal_hit" unique_id=965519198]
+stream = ExtResource("63_pe4n6")
+panning_strength = 2.0
+
+[node name="motorcycle_hit2" type="AudioStreamPlayer3D" parent="vehicle/metal_hit" unique_id=454488099]
+stream = ExtResource("64_hosq5")
+panning_strength = 2.0
+
+[node name="motorcycle_hit1" type="AudioStreamPlayer3D" parent="vehicle/metal_hit" unique_id=1452268230]
+stream = ExtResource("65_vv32q")
+panning_strength = 2.0
+
+[node name="engine_revving_loop" type="AudioStreamPlayer3D" parent="vehicle" unique_id=472501464]
+stream = ExtResource("66_xftem")
+panning_strength = 2.0
+
+[node name="motorcycle_thud" type="AudioStreamPlayer3D" parent="vehicle" unique_id=527008445]
+stream = ExtResource("67_sc2rj")
+panning_strength = 2.0
+
+[node name="engine_revving_initial" type="AudioStreamPlayer3D" parent="vehicle" unique_id=1704652911]
+stream = ExtResource("68_lxw0k")
+panning_strength = 2.0
+
+[node name="button_press" type="AudioStreamPlayer3D" parent="." unique_id=1538310096]
+stream = ExtResource("52_ac18r")
+panning_strength = 2.0
+
+[node name="water" type="Node3D" parent="." unique_id=467777621]
+
+[node name="splash_big" type="Node3D" parent="water" unique_id=663227845]
+
+[node name="splash_big1" type="AudioStreamPlayer3D" parent="water/splash_big" unique_id=1181660271]
+stream = ExtResource("71_oy3ii")
+panning_strength = 2.0
+
+[node name="splash_big2" type="AudioStreamPlayer3D" parent="water/splash_big" unique_id=235874096]
+stream = ExtResource("72_exfrs")
+panning_strength = 2.0
+
+[node name="splash_small" type="Node3D" parent="water" unique_id=644115108]
+
+[node name="s1" type="AudioStreamPlayer3D" parent="water/splash_small" unique_id=1581497790]
+stream = ExtResource("74_fo1as")
+panning_strength = 2.0
+
+[node name="s3" type="AudioStreamPlayer3D" parent="water/splash_small" unique_id=1036825660]
+stream = ExtResource("75_8qcla")
+panning_strength = 2.0
+
+[node name="s2" type="AudioStreamPlayer3D" parent="water/splash_small" unique_id=2002717767]
+stream = ExtResource("76_pwnsb")
+panning_strength = 2.0
+
+[node name="wind" type="AudioStreamPlayer3D" parent="." unique_id=584702396]
+stream = ExtResource("93_1pxxi")
+panning_strength = 2.0
+
+[node name="ambience" type="Node3D" parent="." unique_id=492057946]
+
+[node name="engine_hum" type="Node3D" parent="ambience" unique_id=1453253960]
+
+[node name="2" type="AudioStreamPlayer3D" parent="ambience/engine_hum" unique_id=1346742269]
+stream = ExtResource("71_4arlb")
+panning_strength = 2.0
+
+[node name="1" type="AudioStreamPlayer3D" parent="ambience/engine_hum" unique_id=750751983]
+stream = ExtResource("72_bcesu")
+panning_strength = 2.0
+
+[node name="3" type="AudioStreamPlayer3D" parent="ambience/engine_hum" unique_id=1040638002]
+stream = ExtResource("73_uq7ra")
+panning_strength = 2.0
+
+[node name="wind_ambience1" type="AudioStreamPlayer3D" parent="ambience" unique_id=1702055394]
+stream = ExtResource("74_06m6r")
+panning_strength = 2.0
+
+[node name="turbines" type="Node3D" parent="ambience" unique_id=1808710936]
+
+[node name="2" type="AudioStreamPlayer3D" parent="ambience/turbines" unique_id=1825902638]
+stream = ExtResource("75_bjvv5")
+panning_strength = 2.0
+
+[node name="1" type="AudioStreamPlayer3D" parent="ambience/turbines" unique_id=77158786]
+stream = ExtResource("76_cc1jx")
+panning_strength = 2.0
+
+[node name="3" type="AudioStreamPlayer3D" parent="ambience/turbines" unique_id=1836323996]
+stream = ExtResource("77_55l58")
+panning_strength = 2.0
+
+[node name="winter_wind" type="AudioStreamPlayer3D" parent="ambience" unique_id=265423559]
+stream = ExtResource("78_4fdj8")
+panning_strength = 2.0

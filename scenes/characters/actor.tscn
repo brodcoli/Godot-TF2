@@ -1,0 +1,1049 @@
+[gd_scene format=3 uid="uid://dtim5n0rj6y3p"]
+
+[ext_resource type="Script" uid="uid://ddleb6eemyi4s" path="res://scripts/characters/actor.gd" id="1_actor"]
+[ext_resource type="Script" uid="uid://cj55c0jd0f5s0" path="res://scripts/state_machine.gd" id="2_state_machine"]
+[ext_resource type="Script" uid="uid://b6k5nvp8oqgda" path="res://scripts/characters/actor/control_states/walking.gd" id="3_walking"]
+[ext_resource type="Script" uid="uid://bhws7o1talqq0" path="res://scripts/characters/actor/control_states/swimming.gd" id="4_swimming"]
+[ext_resource type="Script" uid="uid://cpkcs4yyu6cj6" path="res://scripts/characters/actor/control_states/driving.gd" id="5_driving"]
+[ext_resource type="Script" uid="uid://dsd4xho35ybg8" path="res://scripts/characters/actor/control_states/dead.gd" id="6_j41o1"]
+[ext_resource type="Shader" uid="uid://bwnj80duwho3b" path="res://materials/screen_space_paint_filter.gdshader" id="6_paint_shader"]
+[ext_resource type="Script" uid="uid://cbbvkr57p1d6p" path="res://scripts/characters/actor/paint_filter.gd" id="7_paint_filter"]
+[ext_resource type="Script" uid="uid://cgbldciyvhcpv" path="res://scripts/characters/actor/player_control.gd" id="9_player_control"]
+[ext_resource type="AudioStream" uid="uid://2axf571yvbuh" path="res://assets/audio/wind.mp3" id="10_wind_audio"]
+[ext_resource type="Script" uid="uid://c3gj2p08v61w8" path="res://scripts/characters/actor/player_control/wind_sfx.gd" id="11_wind_sfx"]
+[ext_resource type="Script" uid="uid://brvih1fg8c113" path="res://scripts/characters/actor/player_control/web_crazy_mouse_warning.gd" id="12_mouse_warning"]
+[ext_resource type="Script" uid="uid://gx6rl4vkg4nq" path="res://scripts/characters/actor/player_control/fullscreen_toggle.gd" id="13_fullscreen_toggle"]
+[ext_resource type="Shader" uid="uid://dm886ijurvj60" path="res://materials/cursor_2d.gdshader" id="14_cursor_shader"]
+[ext_resource type="Material" uid="uid://dt1iv6gg5ihoa" path="res://materials/particles/smoke.tres" id="15_o8sbh"]
+[ext_resource type="Script" uid="uid://drbpsbrpvcpcu" path="res://scripts/characters/actor/player_control/touch_look_control.gd" id="15_touch_look"]
+[ext_resource type="Script" uid="uid://qe5v4xlctdvu" path="res://scripts/ui/touch_controls.gd" id="16_touch_controls"]
+[ext_resource type="Texture2D" uid="uid://ch6bib6u7ufvf" path="res://assets/textures/ui/touch_controls/touch_control_move.png" id="17_move_texture"]
+[ext_resource type="Script" uid="uid://j0oudcn1ega6" path="res://scripts/characters/actor/player_control/move_control.gd" id="18_move_control"]
+[ext_resource type="Texture2D" uid="uid://cbnf2d0fa237s" path="res://assets/textures/ui/touch_controls/touch_control_pause.png" id="19_pause_texture"]
+[ext_resource type="FontVariation" uid="uid://cvp8vo0nwwxv6" path="res://fonts/Fredoka.tres" id="20_font"]
+[ext_resource type="StyleBox" uid="uid://clm1mbhfhgfgr" path="res://themes/option_btn_hover.tres" id="21_option_hover"]
+[ext_resource type="Script" uid="uid://u0ahylmx82up" path="res://scripts/characters/actor/player_control/underwater_effects.gd" id="22_underwater_filter"]
+[ext_resource type="StyleBox" uid="uid://dgl2r54a0f1mk" path="res://themes/option_btn_normal.tres" id="23_option_normal"]
+[ext_resource type="Script" uid="uid://bbqfbhe23pv2i" path="res://scripts/ui/inventory_sidebar.gd" id="24_inventory_sidebar"]
+[ext_resource type="Shader" uid="uid://c12pw7qtgr5aw" path="res://materials/grayscale_dead.gdshader" id="31_ucu40"]
+[ext_resource type="Script" uid="uid://1f3xff0cr1tr" path="res://scripts/characters/actor/auto_behavior.gd" id="32_auto_behavior"]
+[ext_resource type="Script" uid="uid://cx4i7s7gwsoto" path="res://scripts/characters/actor/auto_behavior_movement.gd" id="33_auto_movement"]
+[ext_resource type="Script" uid="uid://cadoksknyh4x6" path="res://scripts/characters/actor/auto_behavior_combat.gd" id="34_auto_combat"]
+[ext_resource type="Script" uid="uid://c0ftakvwik0ws" path="res://scripts/characters/actor/auto_behavior_item_behavior.gd" id="35_item_behavior"]
+[ext_resource type="Script" uid="uid://crwbmdrv55vg3" path="res://scripts/characters/actor/auto_behavior_item_entry.gd" id="36_item_entry"]
+[ext_resource type="PackedScene" uid="uid://dycw1smscmb5i" path="res://scenes/items/launcher.tscn" id="37_launcher"]
+[ext_resource type="Script" uid="uid://bxiyu6kfcsh37" path="res://scripts/ui/kill_feed.gd" id="38_kill_feed"]
+[ext_resource type="Script" uid="uid://c20gipqj4ixmr" path="res://scripts/ui/teammate_nametag.gd" id="39_nametag"]
+[ext_resource type="Script" uid="uid://dppml1q2e0qg2" path="res://scripts/characters/actor/auto_behavior_combat_values.gd" id="40_combat_values"]
+[ext_resource type="Script" uid="uid://bawsqo4vjrepo" path="res://scripts/ui/damage_indicator_ui.gd" id="41_damage_indicator"]
+[ext_resource type="Script" uid="uid://8y4v1nvbdq06" path="res://scripts/characters/actor/actor_animation_bridge.gd" id="42_animation_bridge"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_body"]
+radius = 0.3
+height = 1.5812066
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_step"]
+radius = 0.15
+height = 0.5011231
+
+[sub_resource type="Resource" id="Resource_launcher_combat_values"]
+script = ExtResource("40_combat_values")
+target_prediction_max_seconds = 1.5
+use_launcher_ground_aim = true
+enable_rocket_jumping = true
+
+[sub_resource type="Resource" id="Resource_launcher_item_entry"]
+script = ExtResource("36_item_entry")
+item_scene = ExtResource("37_launcher")
+combat_values = SubResource("Resource_launcher_combat_values")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_default_world_model"]
+radius = 0.3
+
+[sub_resource type="BoxMesh" id="BoxMesh_rk6do"]
+size = Vector3(0.1, 0.1, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_ucu40"]
+offsets = PackedFloat32Array(0, 0.0726257, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.73, 0.10949998, 0.10949998, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4v56w"]
+gradient = SubResource("Gradient_ucu40")
+
+[sub_resource type="Curve" id="Curve_o8sbh"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.8268642, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ucu40"]
+curve = SubResource("Curve_o8sbh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jjcov"]
+emission_shape_scale = Vector3(0.15, 0.4, 0.1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 1, 0)
+spread = 51.372
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
+scale_curve = SubResource("CurveTexture_ucu40")
+color_ramp = SubResource("GradientTexture1D_4v56w")
+anim_speed_min = 2.0
+anim_speed_max = 5.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_c5a1b"]
+material = ExtResource("15_o8sbh")
+size = Vector2(0.4, 0.4)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_head"]
+radius = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_paint_filter"]
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_paint_filter"]
+render_priority = -1
+shader = ExtResource("6_paint_shader")
+shader_parameter/radius = 1
+
+[sub_resource type="FontVariation" id="FontVariation_button"]
+base_font = ExtResource("20_font")
+variation_opentype = {
+2003072104: 100,
+2003265652: 450
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_hover"]
+bg_color = Color(0.14, 0.14, 0.14, 0.5019608)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_normal"]
+content_margin_left = 50.0
+content_margin_right = 50.0
+bg_color = Color(1, 1, 1, 0.07450981)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.17, 0.17, 0.17, 1)
+
+[sub_resource type="Theme" id="Theme_touch_controls"]
+default_font = ExtResource("20_font")
+default_font_size = 24
+Button/fonts/font = SubResource("FontVariation_button")
+Button/styles/hover = SubResource("StyleBoxFlat_button_hover")
+Button/styles/normal = SubResource("StyleBoxFlat_button_normal")
+Label/font_sizes/font_size = 18
+OptionButton/constants/h_separation = 24
+OptionButton/font_sizes/font_size = 16
+OptionButton/styles/hover = ExtResource("21_option_hover")
+OptionButton/styles/normal = ExtResource("23_option_normal")
+Panel/styles/panel = SubResource("StyleBoxFlat_panel")
+TabContainer/constants/tab_separation = 1
+TabContainer/font_sizes/font_size = 18
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cursor"]
+shader = ExtResource("14_cursor_shader")
+shader_parameter/crosshair_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.05
+shader_parameter/length = 0.15
+shader_parameter/gap = 0.1
+shader_parameter/dot_size = 0.02
+shader_parameter/show_dot = false
+
+[sub_resource type="GDScript" id="GDScript_cursor_visibility"]
+script/source = "extends ColorRect
+
+@onready var _cam_third: Camera3D = %CamThird
+
+func _process(delta: float) -> void:
+	visible = not _cam_third.current
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kill_feed_normal"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.08, 0.08, 0.08, 0.82)
+border_color = Color(1, 1, 1, 0.18)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_kill_feed_name"]
+font = ExtResource("20_font")
+font_size = 18
+outline_color = Color(0, 0, 0, 0.7)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kill_feed_weapon"]
+font = ExtResource("20_font")
+font_size = 18
+font_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kill_feed_highlight"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0, 0, 0, 0.35)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_inventory_item"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.23137255, 0.2, 0.18431373, 0.94)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_inventory_item_inner"]
+bg_color = Color(0.96, 0.96, 0.96, 0.078431375)
+
+[sub_resource type="LabelSettings" id="LabelSettings_inventory_item"]
+font = ExtResource("20_font")
+font_color = Color(0.95686275, 0.95686275, 0.95686275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_selected_inventory_item"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.23137255, 0.2, 0.18431373, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_selected_inventory_item_inner"]
+bg_color = Color(0.96, 0.96, 0.96, 0.078431375)
+
+[sub_resource type="LabelSettings" id="LabelSettings_selected_inventory_item"]
+font = ExtResource("20_font")
+font_size = 20
+font_color = Color(0.95686275, 0.95686275, 0.95686275, 1)
+
+[sub_resource type="Animation" id="Animation_c5a1b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_53n3t"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wk16f"]
+_data = {
+&"RESET": SubResource("Animation_c5a1b"),
+&"fade": SubResource("Animation_53n3t")
+}
+
+[sub_resource type="Shader" id="Shader_health_label"]
+code = "shader_type canvas_item;
+
+uniform vec4 left_color : source_color = vec4(1.0, 0.2, 0.2, 1.0);
+uniform vec4 right_color : source_color = vec4(0.2, 0.6, 1.0, 1.0);
+
+uniform float ratio : hint_range(0.0, 1.0) = 1.0;
+uniform float label_width = 10000.0;
+
+varying vec2 local_pos;
+
+void vertex() {
+	local_pos = VERTEX;
+}
+
+void fragment() {
+	float t = clamp(local_pos.x / max(label_width, 1.0), 0.0, 1.0);
+
+	vec4 chosen_color = mix(left_color, right_color, step(ratio, t));
+
+	float alpha = COLOR.a;
+	COLOR = vec4(chosen_color.rgb, chosen_color.a * alpha);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_health_label"]
+shader = SubResource("Shader_health_label")
+shader_parameter/left_color = Color(0.23137255, 0.2, 0.18431373, 1)
+shader_parameter/right_color = Color(0.95686275, 0.95686275, 0.9559633, 1)
+shader_parameter/ratio = 1.0
+shader_parameter/label_width = 10000.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_health_label"]
+font = ExtResource("20_font")
+font_size = 48
+font_color = Color(0.23137255, 0.2, 0.18431373, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_53n3t"]
+font_size = 20
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ucu40"]
+shader = ExtResource("31_ucu40")
+shader_parameter/amount = 1.0
+
+[sub_resource type="Gradient" id="Gradient_o8sbh"]
+offsets = PackedFloat32Array(0, 0.19282511, 0.8206278, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ucu40"]
+gradient = SubResource("Gradient_o8sbh")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jjcov"]
+font = ExtResource("20_font")
+font_size = 32
+font_color = Color(0.9, 0.9, 0.9, 1)
+
+[sub_resource type="Animation" id="Animation_jjcov"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrayscaleShader:material:shader_parameter/amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_ucu40"]
+resource_name = "intro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrayscaleShader:material:shader_parameter/amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.7, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jjcov"]
+_data = {
+&"RESET": SubResource("Animation_jjcov"),
+&"intro": SubResource("Animation_ucu40")
+}
+
+[node name="Actor" type="CharacterBody3D" unique_id=186401602]
+collision_layer = 3
+collision_mask = 3
+floor_max_angle = 0.9599311
+script = ExtResource("1_actor")
+
+[node name="ControlStateMachine" type="Node" parent="." unique_id=393774671 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_state_machine")
+initial_state = NodePath("Walking")
+
+[node name="Walking" type="Node" parent="ControlStateMachine" unique_id=1457944606]
+script = ExtResource("3_walking")
+
+[node name="Swimming" type="Node" parent="ControlStateMachine" unique_id=1013130304]
+script = ExtResource("4_swimming")
+
+[node name="Driving" type="Node" parent="ControlStateMachine" unique_id=1523762971]
+script = ExtResource("5_driving")
+
+[node name="Dead" type="Node" parent="ControlStateMachine" unique_id=1489948269]
+script = ExtResource("6_j41o1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1428358724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80939674, 0)
+shape = SubResource("CapsuleShape3D_body")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=172045290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25056154, 0)
+shape = SubResource("CapsuleShape3D_step")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=738288788]
+avoidance_enabled = true
+height = 2.0
+max_speed = 4.7
+
+[node name="PlayerControl" type="Node" parent="." unique_id=939807008]
+script = ExtResource("9_player_control")
+
+[node name="AutoBehavior" type="Node" parent="." unique_id=1130801150]
+script = ExtResource("32_auto_behavior")
+
+[node name="Movement" type="Node" parent="AutoBehavior" unique_id=631334169]
+script = ExtResource("33_auto_movement")
+
+[node name="Combat" type="Node" parent="AutoBehavior" unique_id=653382663]
+script = ExtResource("34_auto_combat")
+
+[node name="ItemBehavior" type="Node" parent="AutoBehavior" unique_id=1245717633]
+script = ExtResource("35_item_behavior")
+item_entries = Array[ExtResource("36_item_entry")]([SubResource("Resource_launcher_item_entry")])
+
+[node name="AnimationBridge" type="Node" parent="." unique_id=1606520491]
+script = ExtResource("42_animation_bridge")
+
+[node name="WorldModelRoot" type="Node3D" parent="." unique_id=1033515019]
+
+[node name="DefaultWorldModel" type="MeshInstance3D" parent="WorldModelRoot" unique_id=1269017171]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_default_world_model")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldModelRoot/DefaultWorldModel" unique_id=594092752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, -0.326)
+mesh = SubResource("BoxMesh_rk6do")
+
+[node name="Head" type="Node3D" parent="." unique_id=1848936464]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="DeathParticles" type="GPUParticles3D" parent="Head" unique_id=209179262]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7640785, 0)
+emitting = false
+amount = 100
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.86
+process_material = SubResource("ParticleProcessMaterial_jjcov")
+draw_pass_1 = SubResource("QuadMesh_c5a1b")
+
+[node name="InventoryHoldPoint" type="Node3D" parent="Head" unique_id=853761689]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35367954, -0.43861055, -0.20066744)
+
+[node name="HeadArea" type="Area3D" parent="Head" unique_id=1860673177]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/HeadArea" unique_id=370579315]
+shape = SubResource("SphereShape3D_head")
+
+[node name="CamFirst" type="Camera3D" parent="Head" unique_id=256990074]
+unique_name_in_owner = true
+cull_mask = 1048571
+current = true
+fov = 80.0
+
+[node name="PaintFilter" type="MeshInstance3D" parent="Head/CamFirst" unique_id=979348997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.18749207)
+mesh = SubResource("QuadMesh_paint_filter")
+surface_material_override/0 = SubResource("ShaderMaterial_paint_filter")
+script = ExtResource("7_paint_filter")
+
+[node name="ViewModelRoot" type="Node3D" parent="Head/CamFirst" unique_id=406439754]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Head" unique_id=238192725]
+spring_length = 3.0
+
+[node name="CamThird" type="Camera3D" parent="Head/SpringArm3D" unique_id=1960693151]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02178526)
+cull_mask = 1048573
+fov = 80.0
+
+[node name="LookRay" type="RayCast3D" parent="Head" unique_id=1144196245]
+target_position = Vector3(0, 0, -100)
+
+[node name="InventoryStorageRoot" type="Node3D" parent="." unique_id=1042480597]
+visible = false
+
+[node name="UnderwaterEffects" type="Node" parent="." unique_id=5825823]
+script = ExtResource("22_underwater_filter")
+
+[node name="FullscreenToggle" type="Node" parent="." unique_id=530482337]
+process_mode = 3
+script = ExtResource("13_fullscreen_toggle")
+
+[node name="WindSFX" type="AudioStreamPlayer3D" parent="." unique_id=1153146147]
+stream = ExtResource("10_wind_audio")
+panning_strength = 0.75
+bus = &"Wind"
+script = ExtResource("11_wind_sfx")
+
+[node name="PlayerUI" type="Node" parent="." unique_id=217425818]
+
+[node name="DamageIndicatorUI" type="Node" parent="PlayerUI" unique_id=1979654590]
+script = ExtResource("41_damage_indicator")
+
+[node name="TouchControls" type="Node" parent="PlayerUI" unique_id=977993751]
+process_mode = 3
+script = ExtResource("16_touch_controls")
+
+[node name="TopButtons" type="CanvasLayer" parent="PlayerUI/TouchControls" unique_id=349727578]
+layer = 11
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerUI/TouchControls/TopButtons" unique_id=127725464]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -420.0
+offset_bottom = 140.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerUI/TouchControls/TopButtons/MarginContainer" unique_id=1853199407]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerUI/TouchControls/TopButtons/MarginContainer/HBoxContainer" unique_id=1251449641]
+layout_mode = 2
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="ToggleCam" type="Button" parent="PlayerUI/TouchControls/TopButtons/MarginContainer/HBoxContainer/MarginContainer" unique_id=98726662]
+layout_mode = 2
+theme = SubResource("Theme_touch_controls")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Toggle
+Camera"
+
+[node name="PauseBtn" type="TextureButton" parent="PlayerUI/TouchControls/TopButtons/MarginContainer/HBoxContainer" unique_id=2009847226]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("19_pause_texture")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MobileHUD" type="CanvasLayer" parent="PlayerUI/TouchControls" unique_id=970151740]
+visible = false
+
+[node name="TouchControls" type="Control" parent="PlayerUI/TouchControls/MobileHUD" unique_id=1418680873]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("15_touch_look")
+
+[node name="MoveControl" type="Control" parent="PlayerUI/TouchControls/MobileHUD/TouchControls" unique_id=729477348]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -190.0
+offset_right = 20.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("18_move_control")
+
+[node name="TextureRect" type="TextureRect" parent="PlayerUI/TouchControls/MobileHUD/TouchControls/MoveControl" unique_id=1306813648]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -512.0
+offset_right = 512.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_move_texture")
+
+[node name="HUD" type="CanvasLayer" parent="PlayerUI" unique_id=997043435]
+
+[node name="Cursor" type="ColorRect" parent="PlayerUI/HUD" unique_id=1491424143]
+material = SubResource("ShaderMaterial_cursor")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = SubResource("GDScript_cursor_visibility")
+
+[node name="WebCrazyMouseWarning" type="Control" parent="PlayerUI/HUD" unique_id=279504248]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_mouse_warning")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayerUI/HUD/WebCrazyMouseWarning" unique_id=2071612713]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.256
+anchor_top = 0.006
+anchor_right = 0.744
+anchor_bottom = 0.994
+offset_left = -0.6000061
+offset_top = -0.4000001
+offset_right = 0.5999756
+offset_bottom = 0.39996338
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_outline_color = Color(0.021434637, 0.021434635, 0.021434633, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/outline_size = 28
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "
+
+
+
+[color=#99FF99][font_size=32]If your mouse is going [i]crazy[/i], enable [b]Fullscreen Mode in settings[/b] or by [b]pressing F11[/b][/font_size][/color]
+
+[font_size=20]This issue should stop if you use one of these browsers: [u]Chrome, Edge, or Opera[/u]  [font_size=14](or any other chromium-based browser)[/font_size]
+
+[color=#AAAAFF]As a last resort, enable [b]Use Touch UI[/b] in settings.[/color][/font_size]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KillFeed" type="Control" parent="PlayerUI/HUD" unique_id=1484412813]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -433.0
+offset_top = 7.0
+offset_right = -57.0
+offset_bottom = 145.0
+grow_horizontal = 0
+mouse_filter = 2
+script = ExtResource("38_kill_feed")
+
+[node name="Entries" type="VBoxContainer" parent="PlayerUI/HUD/KillFeed" unique_id=1830495926]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -376.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 4
+alignment = 2
+
+[node name="PinnedEntries" type="VBoxContainer" parent="PlayerUI/HUD/KillFeed/Entries" unique_id=2010475974]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 4
+alignment = 2
+
+[node name="NormalScroll" type="ScrollContainer" parent="PlayerUI/HUD/KillFeed/Entries" unique_id=1784261492]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="NormalEntries" type="VBoxContainer" parent="PlayerUI/HUD/KillFeed/Entries/NormalScroll" unique_id=293373971]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 4
+alignment = 2
+
+[node name="NormalKillFeedEntryTemplate" type="PanelContainer" parent="PlayerUI/HUD/KillFeed" unique_id=895695561]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 0
+size_flags_horizontal = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_kill_feed_normal")
+
+[node name="EntryRow" type="HBoxContainer" parent="PlayerUI/HUD/KillFeed/NormalKillFeedEntryTemplate" unique_id=2123978917]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="AttackerName" type="Label" parent="PlayerUI/HUD/KillFeed/NormalKillFeedEntryTemplate/EntryRow" unique_id=1758972875]
+layout_mode = 2
+text = "attacker"
+label_settings = SubResource("LabelSettings_kill_feed_name")
+horizontal_alignment = 2
+
+[node name="WeaponLabel" type="Label" parent="PlayerUI/HUD/KillFeed/NormalKillFeedEntryTemplate/EntryRow" unique_id=1494756220]
+layout_mode = 2
+text = "💀"
+label_settings = SubResource("LabelSettings_kill_feed_weapon")
+
+[node name="VictimName" type="Label" parent="PlayerUI/HUD/KillFeed/NormalKillFeedEntryTemplate/EntryRow" unique_id=665228946]
+layout_mode = 2
+text = "victim"
+label_settings = SubResource("LabelSettings_kill_feed_name")
+
+[node name="HighlightKillFeedEntryTemplate" type="PanelContainer" parent="PlayerUI/HUD/KillFeed" unique_id=979683543]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 0
+size_flags_horizontal = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_kill_feed_highlight")
+
+[node name="EntryRow" type="HBoxContainer" parent="PlayerUI/HUD/KillFeed/HighlightKillFeedEntryTemplate" unique_id=759991899]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="AttackerName" type="Label" parent="PlayerUI/HUD/KillFeed/HighlightKillFeedEntryTemplate/EntryRow" unique_id=828569431]
+layout_mode = 2
+text = "attacker"
+label_settings = SubResource("LabelSettings_kill_feed_name")
+horizontal_alignment = 2
+
+[node name="WeaponLabel" type="Label" parent="PlayerUI/HUD/KillFeed/HighlightKillFeedEntryTemplate/EntryRow" unique_id=1919611709]
+layout_mode = 2
+text = "💀"
+label_settings = SubResource("LabelSettings_kill_feed_weapon")
+
+[node name="VictimName" type="Label" parent="PlayerUI/HUD/KillFeed/HighlightKillFeedEntryTemplate/EntryRow" unique_id=803519041]
+layout_mode = 2
+text = "victim"
+label_settings = SubResource("LabelSettings_kill_feed_name")
+
+[node name="InventorySidebar" type="Control" parent="PlayerUI/HUD" unique_id=915103411]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -236.0
+offset_top = -206.0
+offset_right = -12.0
+offset_bottom = 206.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(1, 0.5)
+mouse_filter = 2
+script = ExtResource("24_inventory_sidebar")
+
+[node name="ItemList" type="VBoxContainer" parent="PlayerUI/HUD/InventorySidebar" unique_id=725739088]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 214.0
+offset_bottom = 402.0
+theme_override_constants/separation = 10
+
+[node name="HideTimer" type="Timer" parent="PlayerUI/HUD/InventorySidebar" unique_id=1491484793]
+unique_name_in_owner = true
+wait_time = 0.8
+one_shot = true
+
+[node name="InventoryItemTemplate" type="PanelContainer" parent="PlayerUI/HUD/InventorySidebar" unique_id=1333024563]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(132, 82)
+layout_mode = 0
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_inventory_item")
+
+[node name="BGInner" type="PanelContainer" parent="PlayerUI/HUD/InventorySidebar/InventoryItemTemplate" unique_id=1490539844]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_inventory_item_inner")
+
+[node name="Margin" type="MarginContainer" parent="PlayerUI/HUD/InventorySidebar/InventoryItemTemplate/BGInner" unique_id=714682167]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 4
+
+[node name="Stack" type="VBoxContainer" parent="PlayerUI/HUD/InventorySidebar/InventoryItemTemplate/BGInner/Margin" unique_id=1585416509]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Thumbnail" type="TextureRect" parent="PlayerUI/HUD/InventorySidebar/InventoryItemTemplate/BGInner/Margin/Stack" unique_id=466629221]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemName" type="Label" parent="PlayerUI/HUD/InventorySidebar/InventoryItemTemplate/BGInner/Margin/Stack" unique_id=495866972]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Launcher"
+label_settings = SubResource("LabelSettings_inventory_item")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="SelectedInventoryItemTemplate" type="PanelContainer" parent="PlayerUI/HUD/InventorySidebar" unique_id=1715988307]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 122)
+layout_mode = 0
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_selected_inventory_item")
+
+[node name="BGInner" type="PanelContainer" parent="PlayerUI/HUD/InventorySidebar/SelectedInventoryItemTemplate" unique_id=461012475]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_selected_inventory_item_inner")
+
+[node name="Margin" type="MarginContainer" parent="PlayerUI/HUD/InventorySidebar/SelectedInventoryItemTemplate/BGInner" unique_id=814180332]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 6
+
+[node name="Stack" type="VBoxContainer" parent="PlayerUI/HUD/InventorySidebar/SelectedInventoryItemTemplate/BGInner/Margin" unique_id=1856182030]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Thumbnail" type="TextureRect" parent="PlayerUI/HUD/InventorySidebar/SelectedInventoryItemTemplate/BGInner/Margin/Stack" unique_id=1683058918]
+custom_minimum_size = Vector2(0, 82)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemName" type="Label" parent="PlayerUI/HUD/InventorySidebar/SelectedInventoryItemTemplate/BGInner/Margin/Stack" unique_id=1854662513]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Launcher"
+label_settings = SubResource("LabelSettings_selected_inventory_item")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Health" type="Control" parent="PlayerUI/HUD" unique_id=289682639]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 123.0
+offset_top = -219.0
+offset_right = 285.0
+offset_bottom = -57.0
+grow_vertical = 0
+
+[node name="HealthBG" type="ColorRect" parent="PlayerUI/HUD/Health" unique_id=601286403]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.23, 0.20086667, 0.184, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerUI/HUD/Health/HealthBG" unique_id=295372802]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="DamageHealthFill" type="ColorRect" parent="PlayerUI/HUD/Health/HealthBG/MarginContainer" unique_id=1507368967]
+layout_mode = 2
+color = Color(0.68, 0.25874, 0.2516, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerUI/HUD/Health/HealthBG/MarginContainer/DamageHealthFill" unique_id=485627600]
+libraries/ = SubResource("AnimationLibrary_wk16f")
+
+[node name="HealthFill" type="ColorRect" parent="PlayerUI/HUD/Health/HealthBG/MarginContainer" unique_id=2142320984]
+unique_name_in_owner = true
+layout_mode = 2
+color = Color(0.95596474, 0.95596296, 0.9559633, 1)
+
+[node name="MarginContainer2" type="MarginContainer" parent="PlayerUI/HUD/Health/HealthBG" unique_id=606822088]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HealthLabel" type="Label" parent="PlayerUI/HUD/Health/HealthBG/MarginContainer2" unique_id=1443825885]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_health_label")
+layout_mode = 2
+text = "99999"
+label_settings = SubResource("LabelSettings_health_label")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Nametag" type="Control" parent="PlayerUI/HUD" unique_id=2098923035]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = 91.0
+offset_right = 165.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("39_nametag")
+
+[node name="Panel" type="PanelContainer" parent="PlayerUI/HUD/Nametag" unique_id=1257945424]
+self_modulate = Color(1, 1, 1, 0.6627451)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -18.0
+offset_right = 110.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PlayerUI/HUD/Nametag/Panel" unique_id=2093517009]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.65)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("20_font")
+theme_override_font_sizes/font_size = 24
+text = "Actor"
+label_settings = SubResource("LabelSettings_53n3t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeadUI" type="CanvasLayer" parent="PlayerUI" unique_id=1613511662]
+
+[node name="DeadUIMain" type="Control" parent="PlayerUI/DeadUI" unique_id=1398015957]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GrayscaleShader" type="ColorRect" parent="PlayerUI/DeadUI/DeadUIMain" unique_id=8765430]
+visible = false
+material = SubResource("ShaderMaterial_ucu40")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PlayerUI/DeadUI/DeadUIMain" unique_id=957101585]
+modulate = Color(1, 1, 1, 0.7294118)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_ucu40")
+
+[node name="Label" type="Label" parent="PlayerUI/DeadUI/DeadUIMain" unique_id=1459579236]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -386.0
+offset_right = 150.0
+offset_bottom = -346.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Waiting to respawn..."
+label_settings = SubResource("LabelSettings_jjcov")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerUI/DeadUI/DeadUIMain" unique_id=2076183505]
+libraries/ = SubResource("AnimationLibrary_jjcov")
+
+[node name="ScreenEffects" type="CanvasLayer" parent="PlayerUI" unique_id=1699385862]
+
+[node name="UnderwaterFilter" type="ColorRect" parent="PlayerUI/ScreenEffects" unique_id=938105193]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.067200005, 0.18218678, 0.56, 0.46666667)
+
+[connection signal="pressed" from="PlayerUI/TouchControls/TopButtons/MarginContainer/HBoxContainer/MarginContainer/ToggleCam" to="PlayerUI/TouchControls" method="_on_toggle_cam_pressed"]
+[connection signal="pressed" from="PlayerUI/TouchControls/TopButtons/MarginContainer/HBoxContainer/PauseBtn" to="PlayerUI/TouchControls/MobileHUD/TouchControls" method="_on_pause_btn_pressed"]

@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://yi7uo7b67qqp"]
+
+[ext_resource type="Shader" uid="uid://btxpa8vh6xpqv" path="res://materials/surfaces/splat_map_2.gdshader" id="1_lw5ee"]
+[ext_resource type="Texture2D" uid="uid://vbdqgrkq2yn5" path="res://assets/textures/materials/Ground079S/Ground079S_1K-JPG_Color2.jpg" id="4_ceox1"]
+[ext_resource type="Texture2D" uid="uid://063xvraf24o4" path="res://assets/textures/materials/Ground079S/Ground079S_1K-JPG_Displacement.jpg" id="4_k8mhp"]
+[ext_resource type="Texture2D" uid="uid://7we6q5u833g" path="res://assets/textures/materials/Grass005/Grass005_1K-JPG_Color.jpg" id="5_k8mhp"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_lw5ee")
+shader_parameter/black_albedo = ExtResource("4_ceox1")
+shader_parameter/white_albedo = ExtResource("5_k8mhp")
+shader_parameter/blend_height = ExtResource("4_k8mhp")
+shader_parameter/normal_strength = 0.2
+shader_parameter/height_strength = 1.0
+shader_parameter/blend_softness = 0.12
+shader_parameter/height_midpoint = 0.5
+shader_parameter/height_belongs_to_white = true

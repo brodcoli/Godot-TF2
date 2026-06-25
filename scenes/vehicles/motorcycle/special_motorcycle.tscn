@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://b6adcojewhc0o"]
+
+[ext_resource type="Script" uid="uid://byffdkp5rgxbl" path="res://scripts/vehicles/vehicle.gd" id="1_cglxp"]
+[ext_resource type="Script" uid="uid://chpp0gb06mjbj" path="res://scripts/vehicles/motorcycle/motorcycle_sfx.gd" id="2_j5utu"]
+[ext_resource type="Script" uid="uid://dfywprwwebcmm" path="res://scripts/vehicles/motorcycle/motorcycle_music_player.gd" id="3_3bffk"]
+[ext_resource type="AudioStream" uid="uid://boe8x5nj2vxht" path="res://assets/audio/button_press.mp3" id="4_lkvt5"]
+[ext_resource type="Script" uid="uid://c36joxc7emdrc" path="res://scripts/interactable.gd" id="14_kq0s4"]
+[ext_resource type="PackedScene" uid="uid://bdcxrbtnuium3" path="res://assets/models/vehicles/motorcycle.blend" id="15_t7ly2"]
+[ext_resource type="AudioStream" uid="uid://cjjlbkovk6owg" path="res://assets/audio/ambience/engine_hum/1.mp3" id="16_h0p7h"]
+[ext_resource type="AudioStream" uid="uid://dc52phxhe8vw7" path="res://assets/audio/vehicle/engine_revving_loop.mp3" id="17_3nbpb"]
+[ext_resource type="AudioStream" uid="uid://bb7d04eytcpl5" path="res://assets/audio/vehicle/motorcycle_thud.mp3" id="18_rtu8t"]
+
+[sub_resource type="Gradient" id="Gradient_2kuqp"]
+offsets = PackedFloat32Array(0, 0.61849713, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.8786667, 0.48000002, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_emwbv"]
+gradient = SubResource("Gradient_2kuqp")
+
+[sub_resource type="Curve" id="Curve_2kuqp"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.30653268, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ugsdv"]
+curve = SubResource("Curve_2kuqp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2kuqp"]
+emission_shape_scale = Vector3(0.545, 0.495, 1.43)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+scale_min = 0.0
+scale_max = 1.1999999
+scale_curve = SubResource("CurveTexture_ugsdv")
+color_ramp = SubResource("GradientTexture1D_emwbv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jiq7a"]
+shading_mode = 0
+vertex_color_use_as_albedo = true
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_chugu"]
+material = SubResource("StandardMaterial3D_jiq7a")
+size = Vector2(0.05, 0.05)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7mi6h"]
+points = PackedVector3Array(0.39178634, 0.6954125, 0.2967415, 0.39178634, 0.14519528, 0.2967415, 0.24429119, 0.65137064, -1.0260342, -0.39178634, 0.6954125, 0.2967415, 0.24574852, 0, 0.2967415, 0.24429119, 0.14519528, -1.0260342, 0.19658345, 0.58438885, -1.3516455, -0.24436791, 0.65137064, -1.0260342, -0.39178634, 0.14519528, 0.2967415, -0.24582522, 0, 0.2967415, 0.09825337, 0, -1.0260342, 0.19658345, 0.14519528, -1.3516455, -0.19666018, 0.58438885, -1.3516455, -0.24436791, 0.14519528, -1.0260342, -0.09833011, 0, -1.0260342, -0.19666018, 0.14519528, -1.3516455)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_01252"]
+points = PackedVector3Array(-0.24582522, 0, 0.29674134, -0.39178634, 0.1451552, 0.29674134, 0.24574852, 0, 0.29674134, -0.24590193, 0, 1.3163811, -0.39178634, 0.69539255, 0.29674134, -0.39178634, 0.1451552, 1.3163811, 0.39178634, 0.1451552, 0.29674134, 0.24582517, 0, 1.3163811, 0.39178634, 0.69539255, 0.29674134, -0.39178634, 0.9462415, 0.37050676, -0.39178634, 0.8529605, 1.3163811, 0.39178634, 0.1451552, 1.3163811, 0.39178634, 0.9462415, 0.37050676, 0.39178634, 0.8529605, 1.3163811)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6lkvk"]
+radius = 0.025
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4c1y3"]
+radius = 0.029775005
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_iufb7"]
+viewport_path = NodePath("../MusicPlayer/MusicPlayerScreen")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2sbt2"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_iufb7")
+
+[node name="SpecialMotorcycle" type="CharacterBody3D" unique_id=2041477694 node_paths=PackedStringArray("seat_marker", "exit_points")]
+transform = Transform3D(0.96592593, -0.25692108, 0.031286515, 0.25875646, 0.95595276, -0.1385628, 0.005691253, 0.14193691, 0.98985916, 0, 0, 0)
+script = ExtResource("1_cglxp")
+seat_marker = NodePath("SeatMarker")
+exit_points = [NodePath("ExitPoints/ExitRight"), NodePath("ExitPoints/ExitLeft")]
+max_speed = 60.0
+steering_speed = 30.0
+jump_force = 12.0
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1241331657]
+transform = Transform3D(1.0000008, 4.5031992e-10, -1.8899626e-09, -1.6736205e-07, 1, 0, -1.3423845e-08, -5.2154064e-08, 1, 0.030639648, 0.5597992, -0.06808472)
+amount = 16
+lifetime = 0.8
+process_material = SubResource("ParticleProcessMaterial_2kuqp")
+draw_pass_1 = SubResource("QuadMesh_chugu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=144391269]
+shape = SubResource("ConvexPolygonShape3D_7mi6h")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1674364456]
+shape = SubResource("ConvexPolygonShape3D_01252")
+
+[node name="MotorcycleSFX" type="Node" parent="." unique_id=507195660]
+script = ExtResource("2_j5utu")
+
+[node name="MusicPlayer" type="Node3D" parent="." unique_id=212536042]
+script = ExtResource("3_3bffk")
+
+[node name="BtnPressSFX" type="AudioStreamPlayer3D" parent="MusicPlayer" unique_id=160895264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82674176, 0.23345485)
+stream = ExtResource("4_lkvt5")
+max_db = 6.0
+
+[node name="MusicPlayerScreen" type="SubViewport" parent="MusicPlayer" unique_id=70374623]
+size = Vector2i(86, 29)
+
+[node name="Control" type="Control" parent="MusicPlayer/MusicPlayerScreen" unique_id=1796413241]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="MusicPlayer/MusicPlayerScreen/Control" unique_id=1009962163]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayBtnArea" type="Area3D" parent="MusicPlayer" unique_id=1756220923]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.031716287, 0.7639496, 0.24391368)
+script = ExtResource("14_kq0s4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicPlayer/PlayBtnArea" unique_id=1437738214]
+shape = SubResource("SphereShape3D_6lkvk")
+
+[node name="PauseBtnArea" type="Area3D" parent="MusicPlayer" unique_id=1912538830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02038908, 0.7639496, 0.24391368)
+script = ExtResource("14_kq0s4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicPlayer/PauseBtnArea" unique_id=721371889]
+shape = SubResource("SphereShape3D_6lkvk")
+
+[node name="LinkBtnArea" type="Area3D" parent="MusicPlayer" unique_id=1563702727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05747859, 0.82023835, 0.29060286)
+script = ExtResource("14_kq0s4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicPlayer/LinkBtnArea" unique_id=1165802790]
+shape = SubResource("SphereShape3D_4c1y3")
+
+[node name="motorcycle" parent="." unique_id=44766021 instance=ExtResource("15_t7ly2")]
+
+[node name="Plane" parent="motorcycle/Armature/Skeleton3D" parent_id_path=PackedInt32Array(44766021, 586204930) index="1" unique_id=2051331507]
+surface_material_override/1 = SubResource("StandardMaterial3D_2sbt2")
+
+[node name="maincol" parent="motorcycle" index="1" unique_id=148623397]
+visible = false
+
+[node name="maincol2" parent="motorcycle" index="2" unique_id=1339231537]
+visible = false
+
+[node name="SeatMarker" type="Marker3D" parent="." unique_id=692304612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12062222, -0.24037778)
+
+[node name="EngineHumSFX" type="AudioStreamPlayer3D" parent="." unique_id=1091006029]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40786034, 0)
+stream = ExtResource("16_h0p7h")
+volume_db = -28.0
+bus = &"SFX"
+
+[node name="EngineRevSFX" type="AudioStreamPlayer3D" parent="." unique_id=192013698]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39852262, 0)
+stream = ExtResource("17_3nbpb")
+max_db = -1.0
+bus = &"SFX"
+
+[node name="MotorcycleThudSFX" type="AudioStreamPlayer3D" parent="." unique_id=1132992082]
+unique_name_in_owner = true
+stream = ExtResource("18_rtu8t")
+bus = &"SFX"
+
+[node name="ExitPoints" type="Node3D" parent="." unique_id=1762924143]
+
+[node name="ExitRight" type="Marker3D" parent="ExitPoints" unique_id=319069818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.100394964, 0)
+
+[node name="ExitLeft" type="Marker3D" parent="ExitPoints" unique_id=1151064782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.100394964, 0)
+
+[editable path="motorcycle"]

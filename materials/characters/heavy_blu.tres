@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bc38k4t1y0x3u"]
+
+[ext_resource type="Shader" uid="uid://djkpamd53wc28" path="res://materials/characters/paper_roll_tex.gdshader" id="1_afhbq"]
+[ext_resource type="Texture2D" uid="uid://bqfpqykyao8lh" path="res://assets/textures/characters/paper_roll/paper_roll_color.jpg" id="2_4f6s2"]
+[ext_resource type="Texture2D" uid="uid://c18f1xay6738y" path="res://assets/textures/characters/heavy_blu.png" id="3_afhbq"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_afhbq")
+shader_parameter/tex = ExtResource("3_afhbq")
+shader_parameter/paper_roll_tex = ExtResource("2_4f6s2")

@@ -1,0 +1,9 @@
+[gd_resource type="FontVariation" format=3 uid="uid://dhy1r412msdkm"]
+
+[ext_resource type="FontFile" uid="uid://dhxcupkqfe8lw" path="res://assets/fonts/Manrope-VariableFont_wght.ttf" id="1_y5o3c"]
+
+[resource]
+base_font = ExtResource("1_y5o3c")
+variation_opentype = {
+2003265652: 600
+}

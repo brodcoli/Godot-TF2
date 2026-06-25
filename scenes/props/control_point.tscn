@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://x7ngtn0ac61x"]
+
+[ext_resource type="PackedScene" uid="uid://bb5dh1fuceksh" path="res://assets/models/props/control_point.blend" id="1_ggdjb"]
+[ext_resource type="Script" uid="uid://06c81xgbi20" path="res://scripts/props/control_point.gd" id="1_sprt0"]
+
+[node name="ControlPoint" type="Area3D" unique_id=1370923326]
+script = ExtResource("1_sprt0")
+
+[node name="control_point" parent="." unique_id=1870071514 instance=ExtResource("1_ggdjb")]
+
+[node name="Circle_002" parent="control_point" index="0" unique_id=2091431555]
+gi_mode = 2
+
+[node name="capture_area" parent="control_point" index="2" unique_id=1610208559]
+visible = false
+gi_mode = 2
+
+[node name="Circle_001" parent="control_point" index="4" unique_id=1177452446]
+instance_shader_parameters/light_color = Color(0, 0, 0, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+
+[editable path="control_point"]

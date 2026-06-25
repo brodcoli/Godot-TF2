@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bggioqkyvr71u"]
+
+[ext_resource type="Script" uid="uid://5t6idedv232v" path="res://global autoloads/pause_manager/pause_manager.gd" id="1_cpyb4"]
+[ext_resource type="PackedScene" uid="uid://b0jus53fhh8cv" path="res://scenes/ui/screens/pause_screen.tscn" id="2_ps40o"]
+
+[node name="PauseManager" type="Node" unique_id=1962282043]
+process_mode = 3
+script = ExtResource("1_cpyb4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1639493680]
+layer = 10
+
+[node name="PauseScreen" parent="CanvasLayer" unique_id=1829256098 instance=ExtResource("2_ps40o")]
+
+[connection signal="pressed" from="CanvasLayer/PauseScreen/Content/ResumeBtn" to="." method="_on_resume_btn_pressed"]
+
+[editable path="CanvasLayer/PauseScreen"]

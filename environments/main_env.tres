@@ -1,0 +1,24 @@
+[gd_resource type="Environment" format=3 uid="uid://wbt3w4jix3sb"]
+
+[ext_resource type="Texture2D" uid="uid://b3bfoui0dnh25" path="res://environments/standard_color_curves.tres" id="1_81l6r"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_o5qli"]
+rayleigh_color = Color(0.1406, 0.2404999, 0.74, 1)
+turbidity = 0.0
+ground_color = Color(0.42929998, 0.5562, 0.81, 1)
+energy_multiplier = 5.0
+
+[sub_resource type="Sky" id="Sky_jyhfs"]
+sky_material = SubResource("PhysicalSkyMaterial_o5qli")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_jyhfs")
+tonemap_mode = 4
+tonemap_agx_white = 2.0
+tonemap_agx_contrast = 1.6
+glow_enabled = true
+glow_intensity = 0.15
+adjustment_enabled = true
+adjustment_brightness = 1.1
+adjustment_color_correction = ExtResource("1_81l6r")
