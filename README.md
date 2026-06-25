@@ -5,8 +5,7 @@
 [Play in browser on itch.io](https://brodcoli.itch.io/godot-tf2-style-game)
 
 ## Description
-A teensy bit of TF2 sort of recreated in Godot.<br />
-Take your spoonful of TF2 in Godot, it's good for you.
+A teensy bit of Team Fortress 2 sort of recreated in Godot.
 
 ## Controls
 Use `Left mouse button` to fire<br />
